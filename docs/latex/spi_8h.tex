@@ -1,0 +1,155 @@
+\hypertarget{spi_8h}{}\doxysection{spi.\+h File Reference}
+\label{spi_8h}\index{spi.h@{spi.h}}
+{\ttfamily \#include $<$avr/io.\+h$>$}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_a21623e2a5501c821da54dd76ffc1d077}{R\+E\+A\+D\+\_\+\+C\+MD}}~1
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}{W\+R\+I\+T\+E\+\_\+\+C\+MD}}~0
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_adc81a065700d3af56b6fb631585e3641}{D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE}}~0x00
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}{spi\+\_\+init}} ()
+\item 
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_ac71c049f3919089083a9095495002a0c}{spi\+\_\+txrx}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+\item 
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}{spi\+\_\+read\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+\item 
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}{spi\+\_\+write\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+\item 
+uint16\+\_\+t \mbox{\hyperlink{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}{spi\+\_\+read\+\_\+16}} (uint16\+\_\+t)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}{spi\+\_\+write\+\_\+16}} (uint16\+\_\+t, uint16\+\_\+t)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{spi_8h_adc81a065700d3af56b6fb631585e3641}\label{spi_8h_adc81a065700d3af56b6fb631585e3641}} 
+\index{spi.h@{spi.h}!DUMMY\_BYTE@{DUMMY\_BYTE}}
+\index{DUMMY\_BYTE@{DUMMY\_BYTE}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{DUMMY\_BYTE}{DUMMY\_BYTE}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE~0x00}
+
+\mbox{\Hypertarget{spi_8h_a21623e2a5501c821da54dd76ffc1d077}\label{spi_8h_a21623e2a5501c821da54dd76ffc1d077}} 
+\index{spi.h@{spi.h}!READ\_CMD@{READ\_CMD}}
+\index{READ\_CMD@{READ\_CMD}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{READ\_CMD}{READ\_CMD}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} R\+E\+A\+D\+\_\+\+C\+MD~1}
+
+Read command, slave specific \mbox{\Hypertarget{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}\label{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}} 
+\index{spi.h@{spi.h}!WRITE\_CMD@{WRITE\_CMD}}
+\index{WRITE\_CMD@{WRITE\_CMD}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{WRITE\_CMD}{WRITE\_CMD}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} W\+R\+I\+T\+E\+\_\+\+C\+MD~0}
+
+Write command, slave specific 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}\label{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}} 
+\index{spi.h@{spi.h}!spi\_init@{spi\_init}}
+\index{spi\_init@{spi\_init}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
+{\footnotesize\ttfamily void spi\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initialize the Serial Peripheral Interface.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & This is the byte that will be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 Returns the Master In Slave Out data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}\label{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}} 
+\index{spi.h@{spi.h}!spi\_read\_16@{spi\_read\_16}}
+\index{spi\_read\_16@{spi\_read\_16}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_read\_16()}{spi\_read\_16()}}
+{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+read\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+Adding two integers in a non-\/conventional, but equally correct, way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
+\hline
+{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 This returns sum of num\+\_\+a and num\+\_\+b. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}\label{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}} 
+\index{spi.h@{spi.h}!spi\_read\_8@{spi\_read\_8}}
+\index{spi\_read\_8@{spi\_read\_8}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_read\_8()}{spi\_read\_8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+read\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+Adding two integers in a non-\/conventional, but equally correct, way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
+\hline
+{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 This returns sum of num\+\_\+a and num\+\_\+b. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{spi_8h_ac71c049f3919089083a9095495002a0c}\label{spi_8h_ac71c049f3919089083a9095495002a0c}} 
+\index{spi.h@{spi.h}!spi\_txrx@{spi\_txrx}}
+\index{spi\_txrx@{spi\_txrx}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_txrx()}{spi\_txrx()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+txrx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+Sending and receiving a byte by S\+PI.
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & This is the byte that will be sent. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 Returns the Master In Slave Out data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}\label{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}} 
+\index{spi.h@{spi.h}!spi\_write\_16@{spi\_write\_16}}
+\index{spi\_write\_16@{spi\_write\_16}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_write\_16()}{spi\_write\_16()}}
+{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+write\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{,  }\item[{uint16\+\_\+t}]{ }\end{DoxyParamCaption})}
+
+Adding two integers in a non-\/conventional, but equally correct, way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
+\hline
+{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 This returns sum of num\+\_\+a and num\+\_\+b. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}\label{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}} 
+\index{spi.h@{spi.h}!spi\_write\_8@{spi\_write\_8}}
+\index{spi\_write\_8@{spi\_write\_8}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_write\_8()}{spi\_write\_8()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+write\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+
+Adding two integers in a non-\/conventional, but equally correct, way.
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
+\hline
+{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int16 This returns sum of num\+\_\+a and num\+\_\+b. 
+\end{DoxyReturn}

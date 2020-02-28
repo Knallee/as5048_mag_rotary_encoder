@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['as5048_5fread_5fangle_0',['as5048_read_angle',['../as5048a_8c.html#a9cc32bb1a607ee6fa40877cb6fba405c',1,'as5048a.c']]],
+  ['as5048a_2ec_1',['as5048a.c',['../as5048a_8c.html',1,'']]],
+  ['as5048a_2eh_2',['as5048a.h',['../as5048a_8h.html',1,'']]]
+];
