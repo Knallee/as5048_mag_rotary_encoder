@@ -29,6 +29,12 @@
 #define COMP_LOW		10			/**< Indicates high magnetic field. */
 #define CORDIC_OF		9			/**< CORDIC Overflow. Indicates (HIGH) an out of range error in the CORDIC part */
 #define OCF				8			/**< Offset Compensation Finished.  */
+/* Communication bits */
+#define PARITY_BIT		15			/**< Parity bit for SPI communication package. */
+#define	WRITE_READ_BIT	14			/**< SPI read/write bit (ONLY for parity calculation). */
+/* Read & Write for Parity calculation */
+#define READ			1			/**< Read needed for Parity calculation. */
+#define WRITE			0			/**< Write needed for Parity calculation. */
 
 // One time programming function, used only once
 // void as5048_otp();	
