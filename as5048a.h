@@ -60,4 +60,11 @@ uint16_t as5048_read_magnitude();
 */
 uint16_t as5048_read_agc();
 
+/**
+* Clears error flag and receives errors.
+*
+* @return	Returns error bits.
+*/
+uint8_t as5048_clear_error();
+
 #endif /* AS5048A_H_ */
