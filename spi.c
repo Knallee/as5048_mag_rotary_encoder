@@ -7,16 +7,47 @@
 
 #include "spi.h"
 
-void spi_init(uint8_t slave_master, uint8_t data_order, uint8_t spi_clk) 
+void spi_init(spi_init_t *spi_settings) 
 {
+	SPCR		|= (1 << SPE);
 	SPI_PORT	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
-	SPCR		|= (1 << SPE) | (1 << MSTR);
+	
+	if(spi_settings->spi_master == TRUE) {
+		SPCR |= (1 << MSTR);
+	} else if (spi_settings->spi_master == FALSE) {
+		SPCR &= ~(1 << MSTR);
+	}
+	
+	if ((spi_settings->clock_polarity == 0) || (spi_settings->clock_polarity == 1)) {
+		if(spi_settings->clock_polarity == 1) {
+			SPCR |= (1 << CPOL);
+			} else {
+			SPCR &= ~(1 << CPOL);
+		}
+	}
+	
+	if ((spi_settings->clock_phase == 0) || (spi_settings->clock_phase == 1)) {
+		if(spi_settings->clock_phase == 1) {
+			SPCR |= (1 << CPHA);
+			} else {
+			SPCR &= ~(1 << CPHA);
+		}
+	}
+	
+	if ((0 <= spi_settings->clock_rate) && (spi_settings->clock_rate <= 3)) {
+		SPCR |= spi_settings->clock_rate;
+	}
+	
+	if(spi_settings->double_speed == TRUE) {
+		SPSR |= (1 << SPI2X);
+		} else if (spi_settings->double_speed == FALSE) {
+		SPSR &= ~(1 << SPI2X);
+	}
+
+
 }
 
-void spi_init_enable()
-{
-	
-}
+
 
 uint8_t spi_txrx(uint8_t data)
 {
@@ -84,7 +115,6 @@ uint16_t spi_read_16(uint16_t address)
 
 void spi_write_16(uint16_t address, uint16_t data)
 {
-	uint8_t ms_byte, ls_byte;
 	spi_clear_cs();
 	spi_txrx((address >> 8) | (WRITE_CMD << 8));
 	spi_txrx((uint8_t) address);

@@ -11,28 +11,50 @@
 
 #include <avr/io.h>
 
+#define TRUE	1
+#define FALSE	0
+
 #define READ_CMD	1		/**< Read command, slave specific*/
 #define WRITE_CMD	0		/**< Write command, slave specific*/
 
-#define SPI_PORT			/**< AVR SPI port*/
-#define SPI_CS_PIN			/**< AVR chip select pin*/
-#define SPI_MOSI_PIN        /**< AVR MOSI pin*/
-#define SPI_SCK_PIN			/**< AVR MOSI pin*/
+#define SPI_PORT			PORTB	/**< AVR SPI port*/
+#define SPI_CS_PIN			PB4		/**< AVR chip select pin*/
+#define SPI_MOSI_PIN		PB5		/**< AVR MOSI pin*/
+#define SPI_SCK_PIN			PB7		/**< AVR MOSI pin*/
 
-#define SPI_ENABLE
-#define SPI_MASTER
-#define SPI_D
+#define SPI_MASTER				TRUE	/**< If true the AVR becomes the master*/
+#define SPI_DORD_MSB			TRUE	/**< If true the MSB is sent first otherwise LSB*/	
+#define SPI_CLOCK_POLARITY		0		/**< When 0 SCK is high in idle, when 1 low*/
+#define SPI_CLOCK_PHASE			0		/**< Determines which flank the data is sampled on*/
+#define SPI_DOUBLE_RATE			FALSE	/**< When set to true the spi data rate is doubled*/
+
+#define SPI_FCPU_DIV_4			0		/**< F_CPU is divided by 4*/
+#define SPI_FCPU_DIV_16			1		/**< F_CPU is divided by 16*/
+#define SPI_FCPU_DIV_64			2		/**< F_CPU is divided by 64*/
+#define SPI_FCPU_DIV_128		3		/**< F_CPU is divided by 128*/
 
 #define DUMMY_BYTE	0x00
+
+
+typedef struct spi_init {
+	uint8_t data_order;					/**< Set to TRUE (1) for MSB first*/
+	uint8_t spi_master;					/**< Set to TRUE (1) to be master*/
+	uint8_t clock_polarity;				/**< AVR SPI port*/
+	uint8_t clock_phase;				/**< AVR SPI port*/
+	uint8_t clock_rate;					/**< AVR SPI port*/
+	uint8_t double_speed;				/**< AVR SPI port*/
+} spi_init_t;
+
+// Init example
+// spi_init_t spi_settings = {.data_order = SPI_DORD_MSB, .spi_master = TRUE, .clock_polarity = 0, .clock_phase = 0, .clock_rate = SPI_FCPU_DIV_4, .double_speed = FALSE};
 
 
 /**
 * Initialize the Serial Peripheral Interface.
 *
-* @param data  This is the byte that will be sent.
-* @return int16 Returns the Master In Slave Out data.
+* @param spi_settings	A struct containing the spi configuration data.
 */
-void spi_init(void);
+void spi_init(spi_init_t *spi_settings);
 
 
 
