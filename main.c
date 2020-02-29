@@ -6,6 +6,8 @@
  */ 
 
 #include <avr/io.h>
+#include "spi.h"
+#include "as5048a.h"
 
 
 int main(void)
@@ -13,6 +15,7 @@ int main(void)
     /* Replace with your application code */
     while (1) 
     {
+		spi
     }
 }
 

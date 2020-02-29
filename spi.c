@@ -7,10 +7,14 @@
 
 #include "spi.h"
 
-void spi_init() 
+void spi_init(uint8_t slave_master, uint8_t data_order, uint8_t spi_clk) 
 {
-	
-	
+	SPI_PORT	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
+	SPCR		|= (1 << SPE) | (1 << MSTR);
+}
+
+void spi_init_enable()
+{
 	
 }
 
@@ -22,35 +26,73 @@ uint8_t spi_txrx(uint8_t data)
 	return SPDR;
 }
 
-
-uint8_t spi_read_8(uint8_t address)
+void spi_set_cs()
 {
-	spi_txrx(address | (READ_CMD << 8));
-	return spi_txrx(DUMMY_BYTE);
+	SPI_PORT |= (1 << SPI_CS_PIN);
 }
 
-uint8_t spi_write_8(uint8_t address)
+void spi_clear_cs()
 {
+	SPI_PORT &= ~(1 << SPI_CS_PIN);
+}
+
+
+uint8_t spi_read_8(uint8_t address)
+{	
+	spi_clear_cs();
+	spi_txrx(address | (READ_CMD << 8));
+	spi_set_cs();
+
+	// might need some delay between setting and clearing the cs pin
+	spi_clear_cs();
+	uint8_t data = spi_txrx(DUMMY_BYTE);
+	spi_set_cs();
+	
+	return data;
+}
+
+void spi_write_8(uint8_t address, uint8_t data)
+{
+	spi_clear_cs();
 	spi_txrx(address | (WRITE_CMD << 8));
-	return spi_txrx(DUMMY_BYTE);
+	spi_set_cs();
+	
+	// might need some delay between setting and clearing the cs pin
+	spi_clear_cs();
+	spi_txrx(data);
+	spi_set_cs();
+	
 }
 
 uint16_t spi_read_16(uint16_t address)
 {
 	uint8_t ms_byte, ls_byte;
+
+	spi_clear_cs();
 	spi_txrx((address >> 8) | (READ_CMD << 8));
 	spi_txrx((uint8_t) address);
+	spi_set_cs();
+	
+	// might need some delay between setting and clearing the cs pin
+	spi_clear_cs();
 	ms_byte = spi_txrx(DUMMY_BYTE);
 	ls_byte = spi_txrx(DUMMY_BYTE);
+	spi_set_cs();
+	
 	return (ms_byte << 8) | ls_byte;
 }
 
-uint16_t spi_write_16(uint16_t address, uint16_t data)
+void spi_write_16(uint16_t address, uint16_t data)
 {
 	uint8_t ms_byte, ls_byte;
+	spi_clear_cs();
 	spi_txrx((address >> 8) | (WRITE_CMD << 8));
 	spi_txrx((uint8_t) address);
-	ms_byte = spi_txrx(data >> 8);
-	ls_byte = spi_txrx((uint8_t) data);
-	return (ms_byte << 8) | ls_byte;
+	spi_set_cs();
+	
+	// might need some delay between setting and clearing the cs pin
+	spi_clear_cs();
+	spi_txrx(data >> 8);
+	spi_txrx((uint8_t) data);
+	spi_set_cs();
 }

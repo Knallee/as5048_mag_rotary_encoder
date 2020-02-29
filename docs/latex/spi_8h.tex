@@ -8,22 +8,34 @@
 \item 
 \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}{W\+R\+I\+T\+E\+\_\+\+C\+MD}}~0
 \item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_a8112c985f7444e82198d7571ce0a9160}{S\+P\+I\+\_\+\+P\+O\+RT}}
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_ad315c5b0bf1d3cd5a38b85b54f45d8a2}{S\+P\+I\+\_\+\+C\+S\+\_\+\+P\+IN}}
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_a67d2c0b6e0ecbd0351958756e4830172}{S\+P\+I\+\_\+\+M\+O\+S\+I\+\_\+\+P\+IN}}
+\item 
+\#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_aee89f642bb559e12db93e9f412ea185e}{S\+P\+I\+\_\+\+S\+C\+K\+\_\+\+P\+IN}}
+\item 
 \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} \mbox{\hyperlink{spi_8h_adc81a065700d3af56b6fb631585e3641}{D\+U\+M\+M\+Y\+\_\+\+B\+Y\+TE}}~0x00
 \end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}{spi\+\_\+init}} ()
+void \mbox{\hyperlink{spi_8h_ae909944aa85ae98323073c628be541aa}{spi\+\_\+init}} (void)
 \item 
-\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_ac71c049f3919089083a9095495002a0c}{spi\+\_\+txrx}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+void \mbox{\hyperlink{spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c}{spi\+\_\+set\+\_\+cs}} (void)
 \item 
-\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}{spi\+\_\+read\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+void \mbox{\hyperlink{spi_8h_a70dbacbc164ea714703098dc28527f2e}{spi\+\_\+clear\+\_\+cs}} (void)
 \item 
-\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}{spi\+\_\+write\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}})
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a49c959e2498ddd16d0200559610a2b1a}{spi\+\_\+txrx}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} data)
 \item 
-uint16\+\_\+t \mbox{\hyperlink{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}{spi\+\_\+read\+\_\+16}} (uint16\+\_\+t)
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_a87f438536813c8720479273ee6e8d028}{spi\+\_\+read\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} address)
 \item 
-uint16\+\_\+t \mbox{\hyperlink{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}{spi\+\_\+write\+\_\+16}} (uint16\+\_\+t, uint16\+\_\+t)
+\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} \mbox{\hyperlink{spi_8h_af1dfa203901ed25f9c47be398f3d8e77}{spi\+\_\+write\+\_\+8}} (\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} address)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6}{spi\+\_\+read\+\_\+16}} (uint16\+\_\+t address)
+\item 
+uint16\+\_\+t \mbox{\hyperlink{spi_8h_a2d5032b43c70d7bce012c5813cc9c1fe}{spi\+\_\+write\+\_\+16}} (uint16\+\_\+t address, uint16\+\_\+t data)
 \end{DoxyCompactItemize}
 
 
@@ -40,7 +52,31 @@ uint16\+\_\+t \mbox{\hyperlink{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}{spi\+\_
 \doxysubsubsection{\texorpdfstring{READ\_CMD}{READ\_CMD}}
 {\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} R\+E\+A\+D\+\_\+\+C\+MD~1}
 
-Read command, slave specific \mbox{\Hypertarget{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}\label{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}} 
+Read command, slave specific \mbox{\Hypertarget{spi_8h_ad315c5b0bf1d3cd5a38b85b54f45d8a2}\label{spi_8h_ad315c5b0bf1d3cd5a38b85b54f45d8a2}} 
+\index{spi.h@{spi.h}!SPI\_CS\_PIN@{SPI\_CS\_PIN}}
+\index{SPI\_CS\_PIN@{SPI\_CS\_PIN}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_CS\_PIN}{SPI\_CS\_PIN}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} S\+P\+I\+\_\+\+C\+S\+\_\+\+P\+IN}
+
+A\+VR chip select pin \mbox{\Hypertarget{spi_8h_a67d2c0b6e0ecbd0351958756e4830172}\label{spi_8h_a67d2c0b6e0ecbd0351958756e4830172}} 
+\index{spi.h@{spi.h}!SPI\_MOSI\_PIN@{SPI\_MOSI\_PIN}}
+\index{SPI\_MOSI\_PIN@{SPI\_MOSI\_PIN}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_MOSI\_PIN}{SPI\_MOSI\_PIN}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} S\+P\+I\+\_\+\+M\+O\+S\+I\+\_\+\+P\+IN}
+
+A\+VR M\+O\+SI pin \mbox{\Hypertarget{spi_8h_a8112c985f7444e82198d7571ce0a9160}\label{spi_8h_a8112c985f7444e82198d7571ce0a9160}} 
+\index{spi.h@{spi.h}!SPI\_PORT@{SPI\_PORT}}
+\index{SPI\_PORT@{SPI\_PORT}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_PORT}{SPI\_PORT}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} S\+P\+I\+\_\+\+P\+O\+RT}
+
+A\+VR S\+PI port \mbox{\Hypertarget{spi_8h_aee89f642bb559e12db93e9f412ea185e}\label{spi_8h_aee89f642bb559e12db93e9f412ea185e}} 
+\index{spi.h@{spi.h}!SPI\_SCK\_PIN@{SPI\_SCK\_PIN}}
+\index{SPI\_SCK\_PIN@{SPI\_SCK\_PIN}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{SPI\_SCK\_PIN}{SPI\_SCK\_PIN}}
+{\footnotesize\ttfamily \#\mbox{\hyperlink{as5048a_8h_a0ec3f1f76900803ac4f041eb90b84a34}{define}} S\+P\+I\+\_\+\+S\+C\+K\+\_\+\+P\+IN}
+
+A\+VR M\+O\+SI pin \mbox{\Hypertarget{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}\label{spi_8h_af792feb13ae0c1eab8f95f64c8baa96d}} 
 \index{spi.h@{spi.h}!WRITE\_CMD@{WRITE\_CMD}}
 \index{WRITE\_CMD@{WRITE\_CMD}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{WRITE\_CMD}{WRITE\_CMD}}
@@ -49,11 +85,17 @@ Read command, slave specific \mbox{\Hypertarget{spi_8h_af792feb13ae0c1eab8f95f64
 Write command, slave specific 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}\label{spi_8h_a5db0aceecaf7db5fbe2984e88fef3734}} 
+\mbox{\Hypertarget{spi_8h_a70dbacbc164ea714703098dc28527f2e}\label{spi_8h_a70dbacbc164ea714703098dc28527f2e}} 
+\index{spi.h@{spi.h}!spi\_clear\_cs@{spi\_clear\_cs}}
+\index{spi\_clear\_cs@{spi\_clear\_cs}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_clear\_cs()}{spi\_clear\_cs()}}
+{\footnotesize\ttfamily void spi\+\_\+clear\+\_\+cs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Set CS pin to low. \mbox{\Hypertarget{spi_8h_ae909944aa85ae98323073c628be541aa}\label{spi_8h_ae909944aa85ae98323073c628be541aa}} 
 \index{spi.h@{spi.h}!spi\_init@{spi\_init}}
 \index{spi\_init@{spi\_init}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_init()}{spi\_init()}}
-{\footnotesize\ttfamily void spi\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void spi\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 Initialize the Serial Peripheral Interface.
 
@@ -65,11 +107,11 @@ Initialize the Serial Peripheral Interface.
 \begin{DoxyReturn}{Returns}
 int16 Returns the Master In Slave Out data. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}\label{spi_8h_a67caef0cc9e56f82fb5212f0bb8aff64}} 
+\mbox{\Hypertarget{spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6}\label{spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6}} 
 \index{spi.h@{spi.h}!spi\_read\_16@{spi\_read\_16}}
 \index{spi\_read\_16@{spi\_read\_16}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_read\_16()}{spi\_read\_16()}}
-{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+read\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+read\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{address }\end{DoxyParamCaption})}
 
 Adding two integers in a non-\/conventional, but equally correct, way.
 
@@ -83,29 +125,33 @@ Adding two integers in a non-\/conventional, but equally correct, way.
 \begin{DoxyReturn}{Returns}
 int16 This returns sum of num\+\_\+a and num\+\_\+b. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}\label{spi_8h_a23721261eb6dad9ac25390e7675fe1b7}} 
+\mbox{\Hypertarget{spi_8h_a87f438536813c8720479273ee6e8d028}\label{spi_8h_a87f438536813c8720479273ee6e8d028}} 
 \index{spi.h@{spi.h}!spi\_read\_8@{spi\_read\_8}}
 \index{spi\_read\_8@{spi\_read\_8}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_read\_8()}{spi\_read\_8()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+read\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+read\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{address }\end{DoxyParamCaption})}
 
-Adding two integers in a non-\/conventional, but equally correct, way.
+This function performs a read of the specified register address.
 
 
 \begin{DoxyParams}{Parameters}
-{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
-\hline
-{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+{\em address} & This is the address of the register to be read \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int16 This returns sum of num\+\_\+a and num\+\_\+b. 
+The value of the specified register. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{spi_8h_ac71c049f3919089083a9095495002a0c}\label{spi_8h_ac71c049f3919089083a9095495002a0c}} 
+\mbox{\Hypertarget{spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c}\label{spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c}} 
+\index{spi.h@{spi.h}!spi\_set\_cs@{spi\_set\_cs}}
+\index{spi\_set\_cs@{spi\_set\_cs}!spi.h@{spi.h}}
+\doxysubsubsection{\texorpdfstring{spi\_set\_cs()}{spi\_set\_cs()}}
+{\footnotesize\ttfamily void spi\+\_\+set\+\_\+cs (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Set CS pin to high. \mbox{\Hypertarget{spi_8h_a49c959e2498ddd16d0200559610a2b1a}\label{spi_8h_a49c959e2498ddd16d0200559610a2b1a}} 
 \index{spi.h@{spi.h}!spi\_txrx@{spi\_txrx}}
 \index{spi\_txrx@{spi\_txrx}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_txrx()}{spi\_txrx()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+txrx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+txrx (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{data }\end{DoxyParamCaption})}
 
 Sending and receiving a byte by S\+PI.
 
@@ -115,31 +161,31 @@ Sending and receiving a byte by S\+PI.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int16 Returns the Master In Slave Out data. 
+Returns the Master In Slave Out data. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}\label{spi_8h_a2937ecbee6c35b26dd934b9905cdfa63}} 
+\mbox{\Hypertarget{spi_8h_a2d5032b43c70d7bce012c5813cc9c1fe}\label{spi_8h_a2d5032b43c70d7bce012c5813cc9c1fe}} 
 \index{spi.h@{spi.h}!spi\_write\_16@{spi\_write\_16}}
 \index{spi\_write\_16@{spi\_write\_16}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_write\_16()}{spi\_write\_16()}}
-{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+write\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{,  }\item[{uint16\+\_\+t}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily uint16\+\_\+t spi\+\_\+write\+\_\+16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{address,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
 
 Adding two integers in a non-\/conventional, but equally correct, way.
 
 
 \begin{DoxyParams}{Parameters}
-{\em num\+\_\+a} & This is the first parameter to the function add\+\_\+num \\
+{\em address} & This is the first parameter to the function add\+\_\+num \\
 \hline
-{\em num\+\_\+b} & This is the second parameter to the function add\+\_\+num \\
+{\em data} & This is the second parameter to the function add\+\_\+num \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 int16 This returns sum of num\+\_\+a and num\+\_\+b. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}\label{spi_8h_a3709bfe1d89e7a683c6f927abac3f9f4}} 
+\mbox{\Hypertarget{spi_8h_af1dfa203901ed25f9c47be398f3d8e77}\label{spi_8h_af1dfa203901ed25f9c47be398f3d8e77}} 
 \index{spi.h@{spi.h}!spi\_write\_8@{spi\_write\_8}}
 \index{spi\_write\_8@{spi\_write\_8}!spi.h@{spi.h}}
 \doxysubsubsection{\texorpdfstring{spi\_write\_8()}{spi\_write\_8()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+write\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}} spi\+\_\+write\+\_\+8 (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{as5048a_8h_ab077fa1127453be2bd9d4c3c8a768fa7}{uint8\+\_\+t}}}]{address }\end{DoxyParamCaption})}
 
 Adding two integers in a non-\/conventional, but equally correct, way.
 
