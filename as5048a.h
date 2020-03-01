@@ -73,6 +73,6 @@ uint8_t as5048_clear_error();
 * @param	16 bit input for parity calculation.
 * @return	Returns 0x00 for EVEN or 0x01 for ODD.
 */
-uint8_t calc_parity(uint16_t data)
+uint8_t calc_parity(uint16_t data);
 
 #endif /* AS5048A_H_ */
