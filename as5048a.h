@@ -25,13 +25,16 @@
 #define REG_MAGNITUDE	0x3FFE		/**< Magnitude (14 bit) register. */
 #define REG_ANGLE		0x3FFF		/**< Angle (14 bit) register. */
 /* Diagnostics bits */
-#define COMP_HIGH		11			/**< Indicates weak magnetic field. */
-#define COMP_LOW		10			/**< Indicates high magnetic field. */
-#define CORDIC_OF		9			/**< CORDIC Overflow. Indicates (HIGH) an out of range error in the CORDIC part */
-#define OCF				8			/**< Offset Compensation Finished.  */
-/* Communication bits */
+#define COMP_HIGH_BIT	11			/**< Indicates weak magnetic field. */
+#define COMP_LOW_BIT	10			/**< Indicates high magnetic field. */
+#define CORDIC_OF_BIT	9			/**< CORDIC Overflow. Indicates (HIGH) an out of range error in the CORDIC part */
+#define OCF_BIT			8			/**< Offset Compensation Finished.  */
+/* Communication send bits */
 #define PARITY_BIT		15			/**< Parity bit for SPI communication package. */
 #define	WRITE_READ_BIT	14			/**< SPI read/write bit (ONLY for parity calculation). */
+/* Communication received bits */
+#define ERROR_FLAG		14			/**< Error flag that indicates a transmission error in a previous host transmission. */
+
 /* Read & Write for Parity calculation */
 #define READ			1			/**< Read needed for Parity calculation. */
 #define WRITE			0			/**< Write needed for Parity calculation. */
@@ -74,5 +77,10 @@ uint8_t as5048_clear_error();
 * @return	Returns 0x00 for EVEN or 0x01 for ODD.
 */
 uint8_t calc_parity(uint16_t data);
+
+
+// UNTESTED SHIT:
+uint16_t com_error_check(uint16_t data);
+
 
 #endif /* AS5048A_H_ */
