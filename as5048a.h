@@ -67,4 +67,12 @@ uint16_t as5048_read_agc();
 */
 uint8_t as5048_clear_error();
 
+/**
+* Calculates Parity Bit.
+*
+* @param	16 bit input for parity calculation.
+* @return	Returns 0x00 for EVEN or 0x01 for ODD.
+*/
+uint8_t calc_parity(uint16_t data)
+
 #endif /* AS5048A_H_ */

@@ -5,6 +5,8 @@
  *  Author: 2AM Pullups
  */ 
 
+#include "as5048a.h"
+
 uint16_t as5048_read_angle() {
 	uint16_t data = (READ << WRITE_READ_BIT) | REG_ANGLE;					/**< Read bit + Register. */
 	return spi_read_16((calc_parity(data) << PARITY_BIT) | REG_ANGLE);		/**< Send Parity bit + Register and return output */
@@ -22,17 +24,10 @@ uint16_t as5048_read_agc() {
 
 uint8_t as5048_clear_error() {
 		uint16_t data = (READ << WRITE_READ_BIT) | REG_CLR_ERR;								/**< Read bit + Register. */
-		return (uint8_t) spi_read_16((calc_parity(data) << PARITY_BIT) | REG_CLR_ERR);		/**< Send Parity bit + Register and return output  */
-	
+		return (uint8_t) spi_read_16((calc_parity(data) << PARITY_BIT) | REG_CLR_ERR);		/**< Send Parity bit + Register and return output  */	
 }
 
 
-/**
-* Calculates Parity Bit.
-*
-* @param	16 bit input for parity calculation.
-* @return	Returns 0x00 for EVEN or 0x01 for ODD.
-*/
 uint8_t calc_parity(uint16_t data) {
 	uint8_t count = 0;
 	
@@ -43,5 +38,3 @@ uint8_t calc_parity(uint16_t data) {
 	}
 	return count & 0x1;
 }
-
-
