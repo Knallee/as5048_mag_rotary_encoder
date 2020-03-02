@@ -9,7 +9,10 @@
 #ifndef SPI_H_
 #define SPI_H_
 
+#include "fcpu.h"
+
 #include <avr/io.h>
+#include <util/delay.h>
 
 #define TRUE	1
 #define FALSE	0
@@ -17,10 +20,11 @@
 #define READ_CMD	1		/**< Read command, slave specific*/
 #define WRITE_CMD	0		/**< Write command, slave specific*/
 
-#define SPI_PORT			PORTB	/**< AVR SPI port*/
-#define SPI_CS_PIN			PB4		/**< AVR chip select pin*/
-#define SPI_MOSI_PIN		PB5		/**< AVR MOSI pin*/
-#define SPI_SCK_PIN			PB7		/**< AVR MOSI pin*/
+#define SPI_DDR				DDRB
+#define SPI_PORT			PORTB		/**< AVR SPI port*/
+#define SPI_CS_PIN			PORTB4		/**< AVR chip select pin*/
+#define SPI_MOSI_PIN		PORTB5		/**< AVR MOSI pin*/
+#define SPI_SCK_PIN			PORTB7		/**< AVR MOSI pin*/
 
 #define SPI_MASTER				TRUE	/**< If true the AVR becomes the master*/
 #define SPI_DORD_MSB			TRUE	/**< If true the MSB is sent first otherwise LSB*/	
@@ -32,6 +36,10 @@
 #define SPI_FCPU_DIV_16			1		/**< F_CPU is divided by 16*/
 #define SPI_FCPU_DIV_64			2		/**< F_CPU is divided by 64*/
 #define SPI_FCPU_DIV_128		3		/**< F_CPU is divided by 128*/
+
+#define SPI_CS_DELAY			1		/**< The delay, in us, between consequent read or writes */ 
+											  
+
 
 #define DUMMY_BYTE	0x00
 
@@ -124,7 +132,6 @@ uint16_t spi_read_16(uint16_t address);
 *
 * @param address	This is the 16-bit address of the register to be written.
 * @param data		This is the second parameter to the function add_num
-* @return			The value of the specified register.
 */
 void spi_write_16(uint16_t address, uint16_t data);
 

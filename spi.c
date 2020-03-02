@@ -9,8 +9,8 @@
 
 void spi_init(spi_init_t *spi_settings) 
 {
-	SPCR		|= (1 << SPE);
-	SPI_PORT	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
+	SPCR	|= (1 << SPE);
+	SPI_DDR	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
 	
 	if(spi_settings->spi_master == TRUE) {
 		SPCR |= (1 << MSTR);
@@ -21,7 +21,7 @@ void spi_init(spi_init_t *spi_settings)
 	if ((spi_settings->clock_polarity == 0) || (spi_settings->clock_polarity == 1)) {
 		if(spi_settings->clock_polarity == 1) {
 			SPCR |= (1 << CPOL);
-			} else {
+		} else {
 			SPCR &= ~(1 << CPOL);
 		}
 	}
@@ -43,7 +43,6 @@ void spi_init(spi_init_t *spi_settings)
 		} else if (spi_settings->double_speed == FALSE) {
 		SPSR &= ~(1 << SPI2X);
 	}
-
 
 }
 
@@ -71,10 +70,11 @@ void spi_clear_cs()
 uint8_t spi_read_8(uint8_t address)
 {	
 	spi_clear_cs();
-	spi_txrx(address | (READ_CMD << 8));
+	spi_txrx(address | (READ_CMD << 7));
 	spi_set_cs();
 
-	// might need some delay between setting and clearing the cs pin
+	_delay_us(SPI_CS_DELAY);
+
 	spi_clear_cs();
 	uint8_t data = spi_txrx(DUMMY_BYTE);
 	spi_set_cs();
@@ -85,10 +85,11 @@ uint8_t spi_read_8(uint8_t address)
 void spi_write_8(uint8_t address, uint8_t data)
 {
 	spi_clear_cs();
-	spi_txrx(address | (WRITE_CMD << 8));
+	spi_txrx(address | (WRITE_CMD << 7));
 	spi_set_cs();
 	
-	// might need some delay between setting and clearing the cs pin
+	_delay_us(SPI_CS_DELAY);
+
 	spi_clear_cs();
 	spi_txrx(data);
 	spi_set_cs();
@@ -100,11 +101,12 @@ uint16_t spi_read_16(uint16_t address)
 	uint8_t ms_byte, ls_byte;
 
 	spi_clear_cs();
-	spi_txrx((address >> 8) | (READ_CMD << 8));
+	spi_txrx((address >> 8) | (READ_CMD << 7)); // <------------ if zero this will not work!!
 	spi_txrx((uint8_t) address);
 	spi_set_cs();
 	
-	// might need some delay between setting and clearing the cs pin
+	_delay_us(SPI_CS_DELAY);
+
 	spi_clear_cs();
 	ms_byte = spi_txrx(DUMMY_BYTE);
 	ls_byte = spi_txrx(DUMMY_BYTE);
@@ -116,11 +118,12 @@ uint16_t spi_read_16(uint16_t address)
 void spi_write_16(uint16_t address, uint16_t data)
 {
 	spi_clear_cs();
-	spi_txrx((address >> 8) | (WRITE_CMD << 8));
+	spi_txrx((address >> 8) | (WRITE_CMD << 7));
 	spi_txrx((uint8_t) address);
 	spi_set_cs();
 	
-	// might need some delay between setting and clearing the cs pin
+	_delay_us(SPI_CS_DELAY);
+
 	spi_clear_cs();
 	spi_txrx(data >> 8);
 	spi_txrx((uint8_t) data);
