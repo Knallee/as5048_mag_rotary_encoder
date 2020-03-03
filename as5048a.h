@@ -78,8 +78,20 @@ uint8_t as5048_clear_error();
 */
 uint8_t calc_parity(uint16_t data);
 
-
-// UNTESTED SHIT:
+/**
+* Checks for communication errors between master and as5048.
+*
+* @param	Received data (16 bit).
+* @return	Returns error data (bits 3-0) if there are errors during communication & an error flag (bit 14)
+*					else returns requested data.
+*			Error message:
+*				[Bit]	[Description]
+*				14		Error flag (communication error occurred)
+*				3		Parity error	(as5048 -> Master)
+*				2		Parity error	(Master -> as5048)
+*				1		Command invalid (Master -> as5048)
+*				0		Framing error	(Master -> as5048)
+*/
 uint16_t com_error_check(uint16_t data);
 
 
