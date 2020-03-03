@@ -8,33 +8,33 @@
 #include "as5048a.h"
 
 uint16_t as5048_read_angle() {
-	uint16_t data = (READ << WRITE_READ_BIT) | REG_ANGLE;					/**< Read bit + Register. */
-	return spi_read_16((calc_parity(data) << PARITY_BIT) | REG_ANGLE);		/**< Send Parity bit + Register and return output */
+	uint16_t data = (READ << RW_BIT_POSITION) | REG_ANGLE;							/**< Read bit + Register. */
+	return spi_read_16((calc_parity(data) << PARITY_BIT_POSITION) | REG_ANGLE);		/**< Send Parity bit + Register and return output */
 }
 
 uint16_t as5048_read_magnitude() {
-	uint16_t data = (READ << WRITE_READ_BIT) | REG_MAGNITUDE;				/**< Read bit + Register. */
-	return spi_read_16((calc_parity(data) << PARITY_BIT) | REG_MAGNITUDE);	/**< Send Parity bit + Register and return output. */
+	uint16_t data = (READ << RW_BIT_POSITION) | REG_MAGNITUDE;						/**< Read bit + Register. */
+	return spi_read_16((calc_parity(data) << PARITY_BIT_POSITION) | REG_MAGNITUDE);	/**< Send Parity bit + Register and return output. */
 }
 
 uint16_t as5048_read_agc() {
-	uint16_t data = (READ << WRITE_READ_BIT) | REG_AGC;						/**< Read bit + Register. */
-	return spi_read_16((calc_parity(data) << PARITY_BIT) | REG_AGC);		/**< Send Parity bit + Register and return output.  */
+	uint16_t data = (READ << RW_BIT_POSITION) | REG_AGC;							/**< Read bit + Register. */
+	return spi_read_16((calc_parity(data) << PARITY_BIT_POSITION) | REG_AGC);		/**< Send Parity bit + Register and return output.  */
 }
 
 uint8_t as5048_clear_error() {
-		uint16_t data = (READ << WRITE_READ_BIT) | REG_CLR_ERR;								/**< Read bit + Register. */
-		return (uint8_t) spi_read_16((calc_parity(data) << PARITY_BIT) | REG_CLR_ERR);		/**< Send Parity bit + Register and return output. */	
+		uint16_t data = (READ << RW_BIT_POSITION) | REG_CLR_ERR;									/**< Read bit + Register. */
+		return (uint8_t) spi_read_16((calc_parity(data) << PARITY_BIT_POSITION) | REG_CLR_ERR);		/**< Send Parity bit + Register and return output. */	
 }
 
 // Untested!
 uint16_t com_error_check(uint16_t data) {
 	uint8_t err = 0;
-	if ( ((data >> ERROR_FLAG) & 0x01) == 0) {									/**< Check if Error Flag is 0. */
-		if ( calc_parity(data << 1) == ((uint8_t) (data >> PARITY_BIT)) ) {		/**< Check if Parity bit is equal to data's parity value. */
-			return data & 0x3FFF;												/**< Return data with first 2 bits cleared. */
+	if ( ((data >> ERROR_FLAG) & 0x01) == 0) {												/**< Check if Error Flag is 0. */
+		if ( calc_parity(data << 1) == ((uint8_t) (data >> PARITY_BIT_POSITION)) ) {		/**< Check if Parity bit is equal to data's parity value. */
+			return data & 0x3FFF;															/**< Return data with first 2 bits cleared. */
 		} else {
-			err = (1 << 3);														/**< Parity error for further checking. */
+			err = (1 << 3);																	/**< Parity error for further checking. */
 			// TODO: LOG parity error
 		}
 	}

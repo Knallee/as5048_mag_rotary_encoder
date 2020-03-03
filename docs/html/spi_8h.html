@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Magnetic Rotary Endcoder: spi.h File Reference</title>
+<title>Magnetic Rotary Encoder: spi.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Magnetic Rotary Endcoder
-   &#160;<span id="projectnumber">3.14</span>
+   <div id="projectname">Magnetic Rotary Encoder
    </div>
   </td>
  </tr>
@@ -46,6 +49,23 @@ $(function() {
 });
 /* @license-end */</script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('spi_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -60,54 +80,116 @@ $(function() {
 </iframe>
 </div>
 
-</div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">spi.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;avr/io.h&gt;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="fcpu_8h_source.html">fcpu.h</a>&quot;</code><br />
+<code>#include &lt;avr/io.h&gt;</code><br />
+<code>#include &lt;util/delay.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for spi.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h__incl.png" border="0" usemap="#spi_8h" alt=""/></div>
+<map name="spi_8h" id="spi_8h">
+<area shape="rect" title=" " alt="" coords="93,5,143,32"/>
+<area shape="rect" href="fcpu_8h.html" title=" " alt="" coords="5,80,63,107"/>
+<area shape="rect" title=" " alt="" coords="87,80,149,107"/>
+<area shape="rect" title=" " alt="" coords="174,80,259,107"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h__dep__incl.png" border="0" usemap="#spi_8hdep" alt=""/></div>
+<map name="spi_8hdep" id="spi_8hdep">
+<area shape="rect" title=" " alt="" coords="117,5,168,32"/>
+<area shape="rect" href="as5048a_8h.html" title=" " alt="" coords="23,80,105,107"/>
+<area shape="rect" href="main_8c.html" title=" " alt="" coords="112,155,173,181"/>
+<area shape="rect" href="spi_8c.html" title=" " alt="" coords="180,80,231,107"/>
+<area shape="rect" href="as5048a_8c.html" title=" " alt="" coords="5,155,88,181"/>
+</map>
+</div>
 </div>
 <p><a href="spi_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structspi__init.html">spi_init</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a21623e2a5501c821da54dd76ffc1d077"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a21623e2a5501c821da54dd76ffc1d077">READ_CMD</a>&#160;&#160;&#160;1</td></tr>
+<tr class="memitem:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aa8cecfc5c5c054d2875c03e77b7be15d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93f0eb578d23995850d61f7d61c55c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa93f0eb578d23995850d61f7d61c55c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21623e2a5501c821da54dd76ffc1d077"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a21623e2a5501c821da54dd76ffc1d077">READ_CMD</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a21623e2a5501c821da54dd76ffc1d077"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af792feb13ae0c1eab8f95f64c8baa96d"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d">WRITE_CMD</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memitem:af792feb13ae0c1eab8f95f64c8baa96d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d">WRITE_CMD</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:af792feb13ae0c1eab8f95f64c8baa96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8112c985f7444e82198d7571ce0a9160"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a></td></tr>
+<tr class="memitem:a8b07abe3c166558485851f24f2141dc9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8b07abe3c166558485851f24f2141dc9">SPI_DDR</a>&#160;&#160;&#160;DDRB</td></tr>
+<tr class="separator:a8b07abe3c166558485851f24f2141dc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8112c985f7444e82198d7571ce0a9160"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a>&#160;&#160;&#160;PORTB</td></tr>
 <tr class="separator:a8112c985f7444e82198d7571ce0a9160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad315c5b0bf1d3cd5a38b85b54f45d8a2"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2">SPI_CS_PIN</a></td></tr>
+<tr class="memitem:ad315c5b0bf1d3cd5a38b85b54f45d8a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2">SPI_CS_PIN</a>&#160;&#160;&#160;PORTB4</td></tr>
 <tr class="separator:ad315c5b0bf1d3cd5a38b85b54f45d8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a67d2c0b6e0ecbd0351958756e4830172"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172">SPI_MOSI_PIN</a></td></tr>
+<tr class="memitem:a67d2c0b6e0ecbd0351958756e4830172"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172">SPI_MOSI_PIN</a>&#160;&#160;&#160;PORTB5</td></tr>
 <tr class="separator:a67d2c0b6e0ecbd0351958756e4830172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee89f642bb559e12db93e9f412ea185e"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aee89f642bb559e12db93e9f412ea185e">SPI_SCK_PIN</a></td></tr>
+<tr class="memitem:aee89f642bb559e12db93e9f412ea185e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aee89f642bb559e12db93e9f412ea185e">SPI_SCK_PIN</a>&#160;&#160;&#160;PORTB7</td></tr>
 <tr class="separator:aee89f642bb559e12db93e9f412ea185e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc81a065700d3af56b6fb631585e3641"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#adc81a065700d3af56b6fb631585e3641">DUMMY_BYTE</a>&#160;&#160;&#160;0x00</td></tr>
+<tr class="memitem:ae09a2779c2d141aa6a8f8be6d78fe210"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ae09a2779c2d141aa6a8f8be6d78fe210">SPI_MASTER</a>&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
+<tr class="separator:ae09a2779c2d141aa6a8f8be6d78fe210"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7827e60e5abe2dfae19039234a22a9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a0f7827e60e5abe2dfae19039234a22a9">SPI_DORD_MSB</a>&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td></tr>
+<tr class="separator:a0f7827e60e5abe2dfae19039234a22a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2860a8e1f089771ed78489bda642ded"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ad2860a8e1f089771ed78489bda642ded">SPI_CLOCK_POLARITY</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:ad2860a8e1f089771ed78489bda642ded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa55bedc710f39dd1d81a5a0fd30787d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aa55bedc710f39dd1d81a5a0fd30787d7">SPI_CLOCK_PHASE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:aa55bedc710f39dd1d81a5a0fd30787d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad87a91468e2b5ecaceaaeb7b0d2445ec"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ad87a91468e2b5ecaceaaeb7b0d2445ec">SPI_DOUBLE_RATE</a>&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td></tr>
+<tr class="separator:ad87a91468e2b5ecaceaaeb7b0d2445ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f2c52a683fbed71a8d5ee10e196fad7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a5f2c52a683fbed71a8d5ee10e196fad7">SPI_FCPU_DIV_4</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a5f2c52a683fbed71a8d5ee10e196fad7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1d57434022362bdfe784add8ab24dcb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aa1d57434022362bdfe784add8ab24dcb">SPI_FCPU_DIV_16</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aa1d57434022362bdfe784add8ab24dcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45024eed19751d8f9b3ac0d41c0f2073"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a45024eed19751d8f9b3ac0d41c0f2073">SPI_FCPU_DIV_64</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a45024eed19751d8f9b3ac0d41c0f2073"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d75c5edb0a48856ef46097f8ad5ef7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8d75c5edb0a48856ef46097f8ad5ef7e">SPI_FCPU_DIV_128</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a8d75c5edb0a48856ef46097f8ad5ef7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac26310f398a0724ed7603b677c329ca5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ac26310f398a0724ed7603b677c329ca5">SPI_CS_DELAY</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:ac26310f398a0724ed7603b677c329ca5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc81a065700d3af56b6fb631585e3641"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#adc81a065700d3af56b6fb631585e3641">DUMMY_BYTE</a>&#160;&#160;&#160;0x00</td></tr>
 <tr class="separator:adc81a065700d3af56b6fb631585e3641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a004cf3f58494d716715d89416a39f1f3"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="structspi__init.html">spi_init</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a></td></tr>
+<tr class="separator:a004cf3f58494d716715d89416a39f1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ae909944aa85ae98323073c628be541aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#ae909944aa85ae98323073c628be541aa">spi_init</a> (void)</td></tr>
-<tr class="separator:ae909944aa85ae98323073c628be541aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c81a5a53a9561c361d28387b2effbf6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8c81a5a53a9561c361d28387b2effbf6">spi_init</a> (<a class="el" href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a> *<a class="el" href="main_8c.html#a664559792f6af834050aadb27cd9ec50">spi_settings</a>)</td></tr>
+<tr class="separator:a8c81a5a53a9561c361d28387b2effbf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f0ea6d1206fd3ac0739ccba7fab3c7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi_set_cs</a> (void)</td></tr>
 <tr class="separator:a8f0ea6d1206fd3ac0739ccba7fab3c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70dbacbc164ea714703098dc28527f2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi_clear_cs</a> (void)</td></tr>
 <tr class="separator:a70dbacbc164ea714703098dc28527f2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49c959e2498ddd16d0200559610a2b1a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a> (<a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> data)</td></tr>
+<tr class="memitem:a49c959e2498ddd16d0200559610a2b1a"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a> (uint8_t data)</td></tr>
 <tr class="separator:a49c959e2498ddd16d0200559610a2b1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87f438536813c8720479273ee6e8d028"><td class="memItemLeft" align="right" valign="top"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a> (<a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> address)</td></tr>
+<tr class="memitem:a87f438536813c8720479273ee6e8d028"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a> (uint8_t address)</td></tr>
 <tr class="separator:a87f438536813c8720479273ee6e8d028"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1dfa203901ed25f9c47be398f3d8e77"><td class="memItemLeft" align="right" valign="top"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#af1dfa203901ed25f9c47be398f3d8e77">spi_write_8</a> (<a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> address)</td></tr>
-<tr class="separator:af1dfa203901ed25f9c47be398f3d8e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af96c185938136ddabfc2f84d15343dae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae">spi_write_8</a> (uint8_t address, uint8_t data)</td></tr>
+<tr class="separator:af96c185938136ddabfc2f84d15343dae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaa3433a5414e2dcf0f181b2b45c94a6"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a> (uint16_t address)</td></tr>
 <tr class="separator:aeaa3433a5414e2dcf0f181b2b45c94a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d5032b43c70d7bce012c5813cc9c1fe"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a2d5032b43c70d7bce012c5813cc9c1fe">spi_write_16</a> (uint16_t address, uint16_t data)</td></tr>
-<tr class="separator:a2d5032b43c70d7bce012c5813cc9c1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c71b60b9234434f56b969618ab727bb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb">spi_write_16</a> (uint16_t address, uint16_t data)</td></tr>
+<tr class="separator:a3c71b60b9234434f56b969618ab727bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="adc81a065700d3af56b6fb631585e3641"></a>
@@ -117,7 +199,21 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> DUMMY_BYTE&#160;&#160;&#160;0x00</td>
+          <td class="memname">#define DUMMY_BYTE&#160;&#160;&#160;0x00</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa93f0eb578d23995850d61f7d61c55c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93f0eb578d23995850d61f7d61c55c1">&#9670;&nbsp;</a></span>FALSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FALSE&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,11 +227,56 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> READ_CMD&#160;&#160;&#160;1</td>
+          <td class="memname">#define READ_CMD&#160;&#160;&#160;1</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Read command, slave specific </p>
+
+</div>
+</div>
+<a id="aa55bedc710f39dd1d81a5a0fd30787d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa55bedc710f39dd1d81a5a0fd30787d7">&#9670;&nbsp;</a></span>SPI_CLOCK_PHASE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_CLOCK_PHASE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Determines which flank the data is sampled on </p>
+
+</div>
+</div>
+<a id="ad2860a8e1f089771ed78489bda642ded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2860a8e1f089771ed78489bda642ded">&#9670;&nbsp;</a></span>SPI_CLOCK_POLARITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_CLOCK_POLARITY&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When 0 SCK is high in idle, when 1 low </p>
+
+</div>
+</div>
+<a id="ac26310f398a0724ed7603b677c329ca5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac26310f398a0724ed7603b677c329ca5">&#9670;&nbsp;</a></span>SPI_CS_DELAY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_CS_DELAY&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>The delay, in us, between consequent read or writes </p>
 
 </div>
 </div>
@@ -146,11 +287,130 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> SPI_CS_PIN</td>
+          <td class="memname">#define SPI_CS_PIN&#160;&#160;&#160;PORTB4</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>AVR chip select pin </p>
+
+</div>
+</div>
+<a id="a8b07abe3c166558485851f24f2141dc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b07abe3c166558485851f24f2141dc9">&#9670;&nbsp;</a></span>SPI_DDR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_DDR&#160;&#160;&#160;DDRB</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f7827e60e5abe2dfae19039234a22a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7827e60e5abe2dfae19039234a22a9">&#9670;&nbsp;</a></span>SPI_DORD_MSB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_DORD_MSB&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true the MSB is sent first otherwise LSB </p>
+
+</div>
+</div>
+<a id="ad87a91468e2b5ecaceaaeb7b0d2445ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad87a91468e2b5ecaceaaeb7b0d2445ec">&#9670;&nbsp;</a></span>SPI_DOUBLE_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_DOUBLE_RATE&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>When set to true the spi data rate is doubled </p>
+
+</div>
+</div>
+<a id="a8d75c5edb0a48856ef46097f8ad5ef7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d75c5edb0a48856ef46097f8ad5ef7e">&#9670;&nbsp;</a></span>SPI_FCPU_DIV_128</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_FCPU_DIV_128&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>F_CPU is divided by 128 </p>
+
+</div>
+</div>
+<a id="aa1d57434022362bdfe784add8ab24dcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1d57434022362bdfe784add8ab24dcb">&#9670;&nbsp;</a></span>SPI_FCPU_DIV_16</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_FCPU_DIV_16&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>F_CPU is divided by 16 </p>
+
+</div>
+</div>
+<a id="a5f2c52a683fbed71a8d5ee10e196fad7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f2c52a683fbed71a8d5ee10e196fad7">&#9670;&nbsp;</a></span>SPI_FCPU_DIV_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_FCPU_DIV_4&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>F_CPU is divided by 4 </p>
+
+</div>
+</div>
+<a id="a45024eed19751d8f9b3ac0d41c0f2073"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45024eed19751d8f9b3ac0d41c0f2073">&#9670;&nbsp;</a></span>SPI_FCPU_DIV_64</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_FCPU_DIV_64&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>F_CPU is divided by 64 </p>
+
+</div>
+</div>
+<a id="ae09a2779c2d141aa6a8f8be6d78fe210"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae09a2779c2d141aa6a8f8be6d78fe210">&#9670;&nbsp;</a></span>SPI_MASTER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_MASTER&#160;&#160;&#160;<a class="el" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>If true the AVR becomes the master </p>
 
 </div>
 </div>
@@ -161,7 +421,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> SPI_MOSI_PIN</td>
+          <td class="memname">#define SPI_MOSI_PIN&#160;&#160;&#160;PORTB5</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -176,7 +436,7 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> SPI_PORT</td>
+          <td class="memname">#define SPI_PORT&#160;&#160;&#160;PORTB</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -191,11 +451,25 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> SPI_SCK_PIN</td>
+          <td class="memname">#define SPI_SCK_PIN&#160;&#160;&#160;PORTB7</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>AVR MOSI pin </p>
+
+</div>
+</div>
+<a id="aa8cecfc5c5c054d2875c03e77b7be15d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8cecfc5c5c054d2875c03e77b7be15d">&#9670;&nbsp;</a></span>TRUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TRUE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -206,11 +480,26 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#<a class="el" href="as5048a_8h.html#a0ec3f1f76900803ac4f041eb90b84a34">define</a> WRITE_CMD&#160;&#160;&#160;0</td>
+          <td class="memname">#define WRITE_CMD&#160;&#160;&#160;0</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <p>Write command, slave specific </p>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a004cf3f58494d716715d89416a39f1f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a004cf3f58494d716715d89416a39f1f3">&#9670;&nbsp;</a></span>spi_init_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="structspi__init.html">spi_init</a> <a class="el" href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -231,20 +520,38 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set CS pin to low. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a70dbacbc164ea714703098dc28527f2e_icgraph.png" border="0" usemap="#spi_8h_a70dbacbc164ea714703098dc28527f2e_icgraph" alt=""/></div>
+<map name="spi_8h_a70dbacbc164ea714703098dc28527f2e_icgraph" id="spi_8h_a70dbacbc164ea714703098dc28527f2e_icgraph">
+<area shape="rect" title=" " alt="" coords="529,183,624,209"/>
+<area shape="rect" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6" title=" " alt="" coords="388,107,480,133"/>
+<area shape="rect" href="spi_8h.html#a87f438536813c8720479273ee6e8d028" title=" " alt="" coords="391,157,477,184"/>
+<area shape="rect" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb" title=" " alt="" coords="387,208,481,235"/>
+<area shape="rect" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae" title=" " alt="" coords="391,259,477,285"/>
+<area shape="rect" href="as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c" title=" " alt="" coords="191,5,323,32"/>
+<area shape="rect" href="as5048a_8h.html#a07235e117dce5a59ba970908de61a68e" title=" " alt="" coords="195,56,319,83"/>
+<area shape="rect" href="as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced" title=" " alt="" coords="190,107,325,133"/>
+<area shape="rect" href="as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033" title=" " alt="" coords="176,157,339,184"/>
+<area shape="rect" href="as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="232,208,283,235"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="ae909944aa85ae98323073c628be541aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae909944aa85ae98323073c628be541aa">&#9670;&nbsp;</a></span>spi_init()</h2>
+<a id="a8c81a5a53a9561c361d28387b2effbf6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c81a5a53a9561c361d28387b2effbf6">&#9670;&nbsp;</a></span>spi_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void spi_init </td>
+          <td class="memname">void <a class="el" href="structspi__init.html">spi_init</a> </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype"><a class="el" href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a> *&#160;</td>
+          <td class="paramname"><em>spi_settings</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -252,11 +559,19 @@ Functions</h2></td></tr>
 <p>Initialize the Serial Peripheral Interface.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">data</td><td>This is the byte that will be sent. </td></tr>
+    <tr><td class="paramname">spi_settings</td><td>A struct containing the spi configuration data. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16 Returns the Master In Slave Out data. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a8c81a5a53a9561c361d28387b2effbf6_icgraph.png" border="0" usemap="#spi_8h_a8c81a5a53a9561c361d28387b2effbf6_icgraph" alt=""/></div>
+<map name="spi_8h_a8c81a5a53a9561c361d28387b2effbf6_icgraph" id="spi_8h_a8c81a5a53a9561c361d28387b2effbf6_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,167,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -275,15 +590,38 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adding two integers in a non-conventional, but equally correct, way.</p>
+<p>This function performs a 16-bit read of the specified register address.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num_a</td><td>This is the first parameter to the function add_num </td></tr>
-    <tr><td class="paramname">num_b</td><td>This is the second parameter to the function add_num </td></tr>
+    <tr><td class="paramname">address</td><td>This is the 16-bit address of the register to be written. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16 This returns sum of num_a and num_b. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int16 Returns the value of the specified register. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_cgraph.png" border="0" usemap="#spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_cgraph" alt=""/></div>
+<map name="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_cgraph" id="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,97,83"/>
+<area shape="rect" href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00" title=" " alt="" coords="145,5,240,32"/>
+<area shape="rect" href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e" title=" " alt="" coords="150,56,235,83"/>
+<area shape="rect" href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a" title=" " alt="" coords="159,107,227,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_icgraph.png" border="0" usemap="#spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_icgraph" alt=""/></div>
+<map name="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_icgraph" id="spi_8h_aeaa3433a5414e2dcf0f181b2b45c94a6_icgraph">
+<area shape="rect" title=" " alt="" coords="387,81,479,108"/>
+<area shape="rect" href="as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c" title=" " alt="" coords="191,5,323,32"/>
+<area shape="rect" href="as5048a_8h.html#a07235e117dce5a59ba970908de61a68e" title=" " alt="" coords="195,56,319,83"/>
+<area shape="rect" href="as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced" title=" " alt="" coords="190,107,325,133"/>
+<area shape="rect" href="as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033" title=" " alt="" coords="176,157,339,184"/>
+<area shape="rect" href="as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4" title=" " alt="" coords="5,5,128,32"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -294,22 +632,33 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> spi_read_8 </td>
+          <td class="memname">uint8_t spi_read_8 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>address</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>This function performs a read of the specified register address.</p>
+<p>This function performs a 8-bit read of the specified register address.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address</td><td>This is the address of the register to be read </td></tr>
+    <tr><td class="paramname">address</td><td>This is the address of the register to be read. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The value of the specified register. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a87f438536813c8720479273ee6e8d028_cgraph.png" border="0" usemap="#spi_8h_a87f438536813c8720479273ee6e8d028_cgraph" alt=""/></div>
+<map name="spi_8h_a87f438536813c8720479273ee6e8d028_cgraph" id="spi_8h_a87f438536813c8720479273ee6e8d028_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,91,83"/>
+<area shape="rect" href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00" title=" " alt="" coords="139,5,233,32"/>
+<area shape="rect" href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e" title=" " alt="" coords="143,56,229,83"/>
+<area shape="rect" href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a" title=" " alt="" coords="152,107,220,133"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -329,6 +678,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Set CS pin to high. </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c_icgraph.png" border="0" usemap="#spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c_icgraph" alt=""/></div>
+<map name="spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c_icgraph" id="spi_8h_a8f0ea6d1206fd3ac0739ccba7fab3c7c_icgraph">
+<area shape="rect" title=" " alt="" coords="529,183,615,209"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="232,233,283,260"/>
+<area shape="rect" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6" title=" " alt="" coords="388,81,480,108"/>
+<area shape="rect" href="spi_8h.html#a87f438536813c8720479273ee6e8d028" title=" " alt="" coords="391,183,477,209"/>
+<area shape="rect" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb" title=" " alt="" coords="387,233,481,260"/>
+<area shape="rect" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae" title=" " alt="" coords="391,284,477,311"/>
+<area shape="rect" href="as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c" title=" " alt="" coords="191,56,323,83"/>
+<area shape="rect" href="as5048a_8h.html#a07235e117dce5a59ba970908de61a68e" title=" " alt="" coords="195,107,319,133"/>
+<area shape="rect" href="as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced" title=" " alt="" coords="190,157,325,184"/>
+<area shape="rect" href="as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033" title=" " alt="" coords="176,5,339,32"/>
+<area shape="rect" href="as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4" title=" " alt="" coords="5,56,128,83"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -339,9 +706,9 @@ Functions</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> spi_txrx </td>
+          <td class="memname">uint8_t spi_txrx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td>
+          <td class="paramtype">uint8_t&#160;</td>
           <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
         </tr>
@@ -355,17 +722,35 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns the Master In Slave Out data. </dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a49c959e2498ddd16d0200559610a2b1a_icgraph.png" border="0" usemap="#spi_8h_a49c959e2498ddd16d0200559610a2b1a_icgraph" alt=""/></div>
+<map name="spi_8h_a49c959e2498ddd16d0200559610a2b1a_icgraph" id="spi_8h_a49c959e2498ddd16d0200559610a2b1a_icgraph">
+<area shape="rect" title=" " alt="" coords="529,183,597,209"/>
+<area shape="rect" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6" title=" " alt="" coords="388,107,480,133"/>
+<area shape="rect" href="spi_8h.html#a87f438536813c8720479273ee6e8d028" title=" " alt="" coords="391,157,477,184"/>
+<area shape="rect" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb" title=" " alt="" coords="387,208,481,235"/>
+<area shape="rect" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae" title=" " alt="" coords="391,259,477,285"/>
+<area shape="rect" href="as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c" title=" " alt="" coords="191,5,323,32"/>
+<area shape="rect" href="as5048a_8h.html#a07235e117dce5a59ba970908de61a68e" title=" " alt="" coords="195,56,319,83"/>
+<area shape="rect" href="as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced" title=" " alt="" coords="190,107,325,133"/>
+<area shape="rect" href="as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033" title=" " alt="" coords="176,157,339,184"/>
+<area shape="rect" href="as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4" title=" " alt="" coords="5,5,128,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="232,208,283,235"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="a2d5032b43c70d7bce012c5813cc9c1fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d5032b43c70d7bce012c5813cc9c1fe">&#9670;&nbsp;</a></span>spi_write_16()</h2>
+<a id="a3c71b60b9234434f56b969618ab727bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c71b60b9234434f56b969618ab727bb">&#9670;&nbsp;</a></span>spi_write_16()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">uint16_t spi_write_16 </td>
+          <td class="memname">void spi_write_16 </td>
           <td>(</td>
           <td class="paramtype">uint16_t&#160;</td>
           <td class="paramname"><em>address</em>, </td>
@@ -383,51 +768,94 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adding two integers in a non-conventional, but equally correct, way.</p>
+<p>This function writes a 16-bit value to a specified register address.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">address</td><td>This is the first parameter to the function add_num </td></tr>
+    <tr><td class="paramname">address</td><td>This is the 16-bit address of the register to be written. </td></tr>
     <tr><td class="paramname">data</td><td>This is the second parameter to the function add_num </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16 This returns sum of num_a and num_b. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a3c71b60b9234434f56b969618ab727bb_cgraph.png" border="0" usemap="#spi_8h_a3c71b60b9234434f56b969618ab727bb_cgraph" alt=""/></div>
+<map name="spi_8h_a3c71b60b9234434f56b969618ab727bb_cgraph" id="spi_8h_a3c71b60b9234434f56b969618ab727bb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,100,83"/>
+<area shape="rect" href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00" title=" " alt="" coords="148,5,243,32"/>
+<area shape="rect" href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e" title=" " alt="" coords="153,56,238,83"/>
+<area shape="rect" href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a" title=" " alt="" coords="161,107,229,133"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_a3c71b60b9234434f56b969618ab727bb_icgraph.png" border="0" usemap="#spi_8h_a3c71b60b9234434f56b969618ab727bb_icgraph" alt=""/></div>
+<map name="spi_8h_a3c71b60b9234434f56b969618ab727bb_icgraph" id="spi_8h_a3c71b60b9234434f56b969618ab727bb_icgraph">
+<area shape="rect" title=" " alt="" coords="104,5,199,32"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,5,56,32"/>
+</map>
+</div>
 
 </div>
 </div>
-<a id="af1dfa203901ed25f9c47be398f3d8e77"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1dfa203901ed25f9c47be398f3d8e77">&#9670;&nbsp;</a></span>spi_write_8()</h2>
+<a id="af96c185938136ddabfc2f84d15343dae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af96c185938136ddabfc2f84d15343dae">&#9670;&nbsp;</a></span>spi_write_8()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> spi_write_8 </td>
+          <td class="memname">void spi_write_8 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a>&#160;</td>
-          <td class="paramname"><em>address</em></td><td>)</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Adding two integers in a non-conventional, but equally correct, way.</p>
+<p>This function writes data to specified register.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">num_a</td><td>This is the first parameter to the function add_num </td></tr>
-    <tr><td class="paramname">num_b</td><td>This is the second parameter to the function add_num </td></tr>
+    <tr><td class="paramname">address</td><td>This is the address of the register to be written. </td></tr>
+    <tr><td class="paramname">data</td><td>This is the data that will be written. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int16 This returns sum of num_a and num_b. </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="spi_8h_af96c185938136ddabfc2f84d15343dae_cgraph.png" border="0" usemap="#spi_8h_af96c185938136ddabfc2f84d15343dae_cgraph" alt=""/></div>
+<map name="spi_8h_af96c185938136ddabfc2f84d15343dae_cgraph" id="spi_8h_af96c185938136ddabfc2f84d15343dae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,56,92,83"/>
+<area shape="rect" href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00" title=" " alt="" coords="140,5,235,32"/>
+<area shape="rect" href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e" title=" " alt="" coords="145,56,230,83"/>
+<area shape="rect" href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a" title=" " alt="" coords="153,107,221,133"/>
+</map>
+</div>
 
 </div>
 </div>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="spi_8h.html">spi.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

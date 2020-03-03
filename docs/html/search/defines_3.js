@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uint8_5ft_46',['uint8_t',['../as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7',1,'as5048a.h']]]
+  ['f_5fcpu_101',['F_CPU',['../fcpu_8h.html#a43bafb28b29491ec7f871319b5a3b2f8',1,'fcpu.h']]],
+  ['false_102',['FALSE',['../spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1',1,'spi.h']]]
 ];

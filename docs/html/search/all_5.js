@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['uint8_5ft_22',['uint8_t',['../as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7',1,'as5048a.h']]]
+  ['main_21',['main',['../main_8c.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main.c']]],
+  ['main_2ec_22',['main.c',['../main_8c.html',1,'']]]
 ];

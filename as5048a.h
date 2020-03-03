@@ -30,8 +30,8 @@
 #define CORDIC_OF_BIT	9			/**< CORDIC Overflow. Indicates (HIGH) an out of range error in the CORDIC part */
 #define OCF_BIT			8			/**< Offset Compensation Finished.  */
 /* Communication send bits */
-#define PARITY_BIT		15			/**< Parity bit for SPI communication package. */
-#define	WRITE_READ_BIT	14			/**< SPI read/write bit (ONLY for parity calculation). */
+#define PARITY_BIT_POSITION		15			/**< Parity bit for SPI communication package. */
+#define	RW_BIT_POSITION	14			/**< SPI read/write bit (ONLY for parity calculation). */
 /* Communication received bits */
 #define ERROR_FLAG		14			/**< Error flag that indicates a transmission error in a previous host transmission. */
 

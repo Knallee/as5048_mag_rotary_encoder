@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Magnetic Rotary Endcoder: Globals</title>
+<title>Magnetic Rotary Encoder: Globals</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Magnetic Rotary Endcoder
-   &#160;<span id="projectnumber">3.14</span>
+   <div id="projectname">Magnetic Rotary Encoder
    </div>
   </td>
  </tr>
@@ -47,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('globals_func.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,18 +82,40 @@ $(function() {
 
 <div class="contents">
 &#160;<ul>
+<li>as5048_clear_error()
+: <a class="el" href="as5048a_8c.html#ae5b7384dc4d8d3183067c600a10ea97c">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c">as5048a.h</a>
+</li>
+<li>as5048_read_agc()
+: <a class="el" href="as5048a_8c.html#a07235e117dce5a59ba970908de61a68e">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#a07235e117dce5a59ba970908de61a68e">as5048a.h</a>
+</li>
 <li>as5048_read_angle()
-: <a class="el" href="as5048a_8c.html#a9cc32bb1a607ee6fa40877cb6fba405c">as5048a.c</a>
+: <a class="el" href="as5048a_8c.html#ac46c17f8158b2c862be5fda8ddfa5ced">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced">as5048a.h</a>
+</li>
+<li>as5048_read_magnitude()
+: <a class="el" href="as5048a_8c.html#a2249df53284ddf0aec111c6e445c8033">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033">as5048a.h</a>
+</li>
+<li>calc_parity()
+: <a class="el" href="as5048a_8c.html#a113ddec4683a2dbcda1746ee3b81d613">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#a113ddec4683a2dbcda1746ee3b81d613">as5048a.h</a>
+</li>
+<li>com_error_check()
+: <a class="el" href="as5048a_8c.html#a28cfea26cbff84a2082170590fe6ebf4">as5048a.c</a>
+, <a class="el" href="as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4">as5048a.h</a>
 </li>
 <li>main()
 : <a class="el" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main.c</a>
 </li>
 <li>spi_clear_cs()
-: <a class="el" href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi.h</a>
+: <a class="el" href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00">spi.c</a>
+, <a class="el" href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi.h</a>
 </li>
 <li>spi_init()
-: <a class="el" href="spi_8c.html#a5db0aceecaf7db5fbe2984e88fef3734">spi.c</a>
-, <a class="el" href="spi_8h.html#ae909944aa85ae98323073c628be541aa">spi.h</a>
+: <a class="el" href="spi_8c.html#a8c81a5a53a9561c361d28387b2effbf6">spi.c</a>
+, <a class="el" href="spi_8h.html#a8c81a5a53a9561c361d28387b2effbf6">spi.h</a>
 </li>
 <li>spi_read_16()
 : <a class="el" href="spi_8c.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi.c</a>
@@ -85,27 +126,31 @@ $(function() {
 , <a class="el" href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi.h</a>
 </li>
 <li>spi_set_cs()
-: <a class="el" href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi.h</a>
+: <a class="el" href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e">spi.c</a>
+, <a class="el" href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi.h</a>
 </li>
 <li>spi_txrx()
 : <a class="el" href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a">spi.c</a>
 , <a class="el" href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi.h</a>
 </li>
 <li>spi_write_16()
-: <a class="el" href="spi_8h.html#a2d5032b43c70d7bce012c5813cc9c1fe">spi.h</a>
-, <a class="el" href="spi_8c.html#a2d5032b43c70d7bce012c5813cc9c1fe">spi.c</a>
+: <a class="el" href="spi_8c.html#a3c71b60b9234434f56b969618ab727bb">spi.c</a>
+, <a class="el" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb">spi.h</a>
 </li>
 <li>spi_write_8()
-: <a class="el" href="spi_8h.html#af1dfa203901ed25f9c47be398f3d8e77">spi.h</a>
-, <a class="el" href="spi_8c.html#af1dfa203901ed25f9c47be398f3d8e77">spi.c</a>
+: <a class="el" href="spi_8c.html#af96c185938136ddabfc2f84d15343dae">spi.c</a>
+, <a class="el" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae">spi.h</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>

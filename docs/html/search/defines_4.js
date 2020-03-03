@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5fcmd_47',['WRITE_CMD',['../spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d',1,'spi.h']]]
+  ['ocf_5fbit_103',['OCF_BIT',['../as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35',1,'as5048a.h']]]
 ];

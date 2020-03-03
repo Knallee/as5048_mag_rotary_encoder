@@ -1,0 +1,26 @@
+var as5048a_8h =
+[
+    [ "COMP_HIGH_BIT", "as5048a_8h.html#a2162a26e2e567ab6541a4278881be631", null ],
+    [ "COMP_LOW_BIT", "as5048a_8h.html#aa31ce9bf9f252da3d5c4fb4413cc426a", null ],
+    [ "CORDIC_OF_BIT", "as5048a_8h.html#ae6f3b8d948da7dec9015a3122df5b6c3", null ],
+    [ "ERROR_FLAG", "as5048a_8h.html#a0a8c178f536fdedde62cfd1ef70796e0", null ],
+    [ "OCF_BIT", "as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35", null ],
+    [ "PARITY_BIT", "as5048a_8h.html#a3fe0dea7b30a55d84f5763338956eb44", null ],
+    [ "READ", "as5048a_8h.html#ada74e7db007a68e763f20c17f2985356", null ],
+    [ "REG_AGC", "as5048a_8h.html#ae54a3e889b478eecd40e42964d58f988", null ],
+    [ "REG_ANGLE", "as5048a_8h.html#a91485a1691b7e7fa66ca178304c6b9dd", null ],
+    [ "REG_CLR_ERR", "as5048a_8h.html#ae1f27335ecee4251899d0b6272addf32", null ],
+    [ "REG_MAGNITUDE", "as5048a_8h.html#a7968a149464c788e3e0254788e4d681f", null ],
+    [ "REG_NOP", "as5048a_8h.html#aa306eb0a91b5a6c086eef3e0aafc1bbe", null ],
+    [ "REG_OTP_HIGH", "as5048a_8h.html#a220f440b1851d66b6f5a2ec43574f43f", null ],
+    [ "REG_OTP_LOW", "as5048a_8h.html#a2c9b5e2cc0131a0de3f2df394aab8e2d", null ],
+    [ "REG_PRG_CTRL", "as5048a_8h.html#a4b3208483afd92f0b5663e4b46df1d5e", null ],
+    [ "RW_BIT_POSITION", "as5048a_8h.html#a92e316045da5108f786e3d217770f160", null ],
+    [ "WRITE", "as5048a_8h.html#aa10f470e996d0f51210d24f442d25e1e", null ],
+    [ "as5048_clear_error", "as5048a_8h.html#ae5b7384dc4d8d3183067c600a10ea97c", null ],
+    [ "as5048_read_agc", "as5048a_8h.html#a07235e117dce5a59ba970908de61a68e", null ],
+    [ "as5048_read_angle", "as5048a_8h.html#ac46c17f8158b2c862be5fda8ddfa5ced", null ],
+    [ "as5048_read_magnitude", "as5048a_8h.html#a2249df53284ddf0aec111c6e445c8033", null ],
+    [ "calc_parity", "as5048a_8h.html#a113ddec4683a2dbcda1746ee3b81d613", null ],
+    [ "com_error_check", "as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4", null ]
+];

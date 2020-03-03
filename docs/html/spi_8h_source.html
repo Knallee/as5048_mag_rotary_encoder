@@ -5,10 +5,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Magnetic Rotary Endcoder: spi.h Source File</title>
+<title>Magnetic Rotary Encoder: spi.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -21,8 +25,7 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Magnetic Rotary Endcoder
-   &#160;<span id="projectnumber">3.14</span>
+   <div id="projectname">Magnetic Rotary Encoder
    </div>
   </td>
  </tr>
@@ -47,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('spi_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -77,51 +96,138 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#ifndef SPI_H_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define SPI_H_</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="fcpu_8h.html">fcpu.h</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="spi_8h.html#a21623e2a5501c821da54dd76ffc1d077">   14</a></span>&#160;<span class="preprocessor">#define READ_CMD    1       </span></div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d">   15</a></span>&#160;<span class="preprocessor">#define WRITE_CMD   0       </span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="spi_8h.html#a8112c985f7444e82198d7571ce0a9160">   17</a></span>&#160;<span class="preprocessor">#define SPI_PORT            </span></div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2">   18</a></span>&#160;<span class="preprocessor">#define SPI_CS_PIN          </span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172">   19</a></span>&#160;<span class="preprocessor">#define SPI_MOSI_PIN        </span></div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="spi_8h.html#aee89f642bb559e12db93e9f412ea185e">   20</a></span>&#160;<span class="preprocessor">#define SPI_SCK_PIN         </span></div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="spi_8h.html#adc81a065700d3af56b6fb631585e3641">   22</a></span>&#160;<span class="preprocessor">#define DUMMY_BYTE  0x00</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#ae909944aa85ae98323073c628be541aa">spi_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi_set_cs</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi_clear_cs</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> <a class="code" href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a>(<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> data);</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> <a class="code" href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a>(<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> address);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;avr/io.h&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;util/delay.h&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">   17</a></span>&#160;<span class="preprocessor">#define TRUE    1</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1">   18</a></span>&#160;<span class="preprocessor">#define FALSE   0</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="spi_8h.html#a21623e2a5501c821da54dd76ffc1d077">   20</a></span>&#160;<span class="preprocessor">#define READ_CMD    1       </span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d">   21</a></span>&#160;<span class="preprocessor">#define WRITE_CMD   0       </span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="spi_8h.html#a8b07abe3c166558485851f24f2141dc9">   23</a></span>&#160;<span class="preprocessor">#define SPI_DDR             DDRB</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="spi_8h.html#a8112c985f7444e82198d7571ce0a9160">   24</a></span>&#160;<span class="preprocessor">#define SPI_PORT            PORTB       </span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2">   25</a></span>&#160;<span class="preprocessor">#define SPI_CS_PIN          PORTB4      </span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172">   26</a></span>&#160;<span class="preprocessor">#define SPI_MOSI_PIN        PORTB5      </span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="spi_8h.html#aee89f642bb559e12db93e9f412ea185e">   27</a></span>&#160;<span class="preprocessor">#define SPI_SCK_PIN         PORTB7      </span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="spi_8h.html#ae09a2779c2d141aa6a8f8be6d78fe210">   29</a></span>&#160;<span class="preprocessor">#define SPI_MASTER              TRUE    </span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="spi_8h.html#a0f7827e60e5abe2dfae19039234a22a9">   30</a></span>&#160;<span class="preprocessor">#define SPI_DORD_MSB            TRUE    </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="spi_8h.html#ad2860a8e1f089771ed78489bda642ded">   31</a></span>&#160;<span class="preprocessor">#define SPI_CLOCK_POLARITY      0       </span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="spi_8h.html#aa55bedc710f39dd1d81a5a0fd30787d7">   32</a></span>&#160;<span class="preprocessor">#define SPI_CLOCK_PHASE         0       </span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="spi_8h.html#ad87a91468e2b5ecaceaaeb7b0d2445ec">   33</a></span>&#160;<span class="preprocessor">#define SPI_DOUBLE_RATE         FALSE   </span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="spi_8h.html#a5f2c52a683fbed71a8d5ee10e196fad7">   35</a></span>&#160;<span class="preprocessor">#define SPI_FCPU_DIV_4          0       </span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="spi_8h.html#aa1d57434022362bdfe784add8ab24dcb">   36</a></span>&#160;<span class="preprocessor">#define SPI_FCPU_DIV_16         1       </span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="spi_8h.html#a45024eed19751d8f9b3ac0d41c0f2073">   37</a></span>&#160;<span class="preprocessor">#define SPI_FCPU_DIV_64         2       </span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="spi_8h.html#a8d75c5edb0a48856ef46097f8ad5ef7e">   38</a></span>&#160;<span class="preprocessor">#define SPI_FCPU_DIV_128        3       </span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="spi_8h.html#ac26310f398a0724ed7603b677c329ca5">   40</a></span>&#160;<span class="preprocessor">#define SPI_CS_DELAY            1       </span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="spi_8h.html#adc81a065700d3af56b6fb631585e3641">   44</a></span>&#160;<span class="preprocessor">#define DUMMY_BYTE  0x00</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="structspi__init.html">   47</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structspi__init.html">spi_init</a> {</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="structspi__init.html#ac95bd399ff3e7fcde381478ed02f5e08">   48</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#ac95bd399ff3e7fcde381478ed02f5e08">data_order</a>;                 </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="structspi__init.html#a99f68a0c70908a1aeba75afe378b9a3d">   49</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#a99f68a0c70908a1aeba75afe378b9a3d">spi_master</a>;                 </div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="structspi__init.html#a10640ce360825c79c55c4153278c6cc1">   50</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#a10640ce360825c79c55c4153278c6cc1">clock_polarity</a>;             </div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="structspi__init.html#abadd560fb382ec31c492109cb74c57a5">   51</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#abadd560fb382ec31c492109cb74c57a5">clock_phase</a>;                </div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="structspi__init.html#a37996c542234e402a4f5d6985b8a4222">   52</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#a37996c542234e402a4f5d6985b8a4222">clock_rate</a>;                 </div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="structspi__init.html#a233d8692a557dda9abcb20c48f93ab8b">   53</a></span>&#160;    uint8_t <a class="code" href="structspi__init.html#a233d8692a557dda9abcb20c48f93ab8b">double_speed</a>;               </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;} <a class="code" href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a>;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="comment">// Init example</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="comment">// spi_init_t spi_settings = {.data_order = SPI_DORD_MSB, .spi_master = TRUE, .clock_polarity = 0, .clock_phase = 0, .clock_rate = SPI_FCPU_DIV_4, .double_speed = FALSE};</span></div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> <a class="code" href="spi_8h.html#af1dfa203901ed25f9c47be398f3d8e77">spi_write_8</a>(<a class="code" href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a> address);</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a8c81a5a53a9561c361d28387b2effbf6">spi_init</a>(<a class="code" href="structspi__init.html">spi_init_t</a> *<a class="code" href="main_8c.html#a664559792f6af834050aadb27cd9ec50">spi_settings</a>);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;uint16_t <a class="code" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a>(uint16_t address);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi_set_cs</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160; </div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;uint16_t <a class="code" href="spi_8h.html#a2d5032b43c70d7bce012c5813cc9c1fe">spi_write_16</a>(uint16_t address, uint16_t data);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SPI_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi_clear_cs</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;uint8_t <a class="code" href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a>(uint8_t data);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;uint8_t <a class="code" href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a>(uint8_t address);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#af96c185938136ddabfc2f84d15343dae">spi_write_8</a>(uint8_t address, uint8_t data);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;uint16_t <a class="code" href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a>(uint16_t address);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160; </div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160; </div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="keywordtype">void</span> <a class="code" href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb">spi_write_16</a>(uint16_t address, uint16_t data);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160; </div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* SPI_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aspi_8h_html_a87f438536813c8720479273ee6e8d028"><div class="ttname"><a href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a></div><div class="ttdeci">uint8_t spi_read_8(uint8_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:26</div></div>
-<div class="ttc" id="aas5048a_8h_html_ab077fa1127453be2bd9d4c3c8a768fa7"><div class="ttname"><a href="as5048a_8h.html#ab077fa1127453be2bd9d4c3c8a768fa7">uint8_t</a></div><div class="ttdeci">#define uint8_t</div><div class="ttdef"><b>Definition:</b> as5048a.h:27</div></div>
-<div class="ttc" id="aspi_8h_html_aeaa3433a5414e2dcf0f181b2b45c94a6"><div class="ttname"><a href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a></div><div class="ttdeci">uint16_t spi_read_16(uint16_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:38</div></div>
-<div class="ttc" id="aspi_8h_html_a49c959e2498ddd16d0200559610a2b1a"><div class="ttname"><a href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a></div><div class="ttdeci">uint8_t spi_txrx(uint8_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:17</div></div>
-<div class="ttc" id="aspi_8h_html_ae909944aa85ae98323073c628be541aa"><div class="ttname"><a href="spi_8h.html#ae909944aa85ae98323073c628be541aa">spi_init</a></div><div class="ttdeci">void spi_init(void)</div><div class="ttdef"><b>Definition:</b> spi.c:10</div></div>
-<div class="ttc" id="aspi_8h_html_a70dbacbc164ea714703098dc28527f2e"><div class="ttname"><a href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi_clear_cs</a></div><div class="ttdeci">void spi_clear_cs(void)</div></div>
-<div class="ttc" id="aspi_8h_html_a2d5032b43c70d7bce012c5813cc9c1fe"><div class="ttname"><a href="spi_8h.html#a2d5032b43c70d7bce012c5813cc9c1fe">spi_write_16</a></div><div class="ttdeci">uint16_t spi_write_16(uint16_t address, uint16_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:48</div></div>
-<div class="ttc" id="aspi_8h_html_af1dfa203901ed25f9c47be398f3d8e77"><div class="ttname"><a href="spi_8h.html#af1dfa203901ed25f9c47be398f3d8e77">spi_write_8</a></div><div class="ttdeci">uint8_t spi_write_8(uint8_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:32</div></div>
-<div class="ttc" id="aspi_8h_html_a8f0ea6d1206fd3ac0739ccba7fab3c7c"><div class="ttname"><a href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi_set_cs</a></div><div class="ttdeci">void spi_set_cs(void)</div></div>
+</div><!-- doc-content -->
+<div class="ttc" id="aspi_8h_html_a21623e2a5501c821da54dd76ffc1d077"><div class="ttname"><a href="spi_8h.html#a21623e2a5501c821da54dd76ffc1d077">READ_CMD</a></div><div class="ttdeci">#define READ_CMD</div><div class="ttdef"><b>Definition:</b> spi.h:20</div></div>
+<div class="ttc" id="aspi_8c_html_a3c71b60b9234434f56b969618ab727bb"><div class="ttname"><a href="spi_8c.html#a3c71b60b9234434f56b969618ab727bb">spi_write_16</a></div><div class="ttdeci">void spi_write_16(uint16_t address, uint16_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:118</div></div>
+<div class="ttc" id="aspi_8h_html_aa93f0eb578d23995850d61f7d61c55c1"><div class="ttname"><a href="spi_8h.html#aa93f0eb578d23995850d61f7d61c55c1">FALSE</a></div><div class="ttdeci">#define FALSE</div><div class="ttdef"><b>Definition:</b> spi.h:18</div></div>
+<div class="ttc" id="afcpu_8h_html"><div class="ttname"><a href="fcpu_8h.html">fcpu.h</a></div></div>
+<div class="ttc" id="aspi_8h_html_a87f438536813c8720479273ee6e8d028"><div class="ttname"><a href="spi_8h.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a></div><div class="ttdeci">uint8_t spi_read_8(uint8_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:70</div></div>
+<div class="ttc" id="aspi_8h_html"><div class="ttname"><a href="spi_8h.html">spi.h</a></div></div>
+<div class="ttc" id="aspi_8h_html_a8b07abe3c166558485851f24f2141dc9"><div class="ttname"><a href="spi_8h.html#a8b07abe3c166558485851f24f2141dc9">SPI_DDR</a></div><div class="ttdeci">#define SPI_DDR</div><div class="ttdef"><b>Definition:</b> spi.h:23</div></div>
+<div class="ttc" id="aspi_8h_html_ac26310f398a0724ed7603b677c329ca5"><div class="ttname"><a href="spi_8h.html#ac26310f398a0724ed7603b677c329ca5">SPI_CS_DELAY</a></div><div class="ttdeci">#define SPI_CS_DELAY</div><div class="ttdef"><b>Definition:</b> spi.h:40</div></div>
+<div class="ttc" id="aspi_8c_html_a9c6f53a999e69f237e7e3979e4c8eb00"><div class="ttname"><a href="spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00">spi_clear_cs</a></div><div class="ttdeci">void spi_clear_cs()</div><div class="ttdef"><b>Definition:</b> spi.c:64</div></div>
+<div class="ttc" id="aspi_8h_html_aa8cecfc5c5c054d2875c03e77b7be15d"><div class="ttname"><a href="spi_8h.html#aa8cecfc5c5c054d2875c03e77b7be15d">TRUE</a></div><div class="ttdeci">#define TRUE</div><div class="ttdef"><b>Definition:</b> spi.h:17</div></div>
+<div class="ttc" id="amain_8c_html_a664559792f6af834050aadb27cd9ec50"><div class="ttname"><a href="main_8c.html#a664559792f6af834050aadb27cd9ec50">spi_settings</a></div><div class="ttdeci">spi_init_t spi_settings</div><div class="ttdef"><b>Definition:</b> main.c:14</div></div>
+<div class="ttc" id="astructspi__init_html"><div class="ttname"><a href="structspi__init.html">spi_init</a></div><div class="ttdef"><b>Definition:</b> spi.h:47</div></div>
+<div class="ttc" id="aspi_8c_html_aeaa3433a5414e2dcf0f181b2b45c94a6"><div class="ttname"><a href="spi_8c.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a></div><div class="ttdeci">uint16_t spi_read_16(uint16_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:99</div></div>
+<div class="ttc" id="astructspi__init_html_a99f68a0c70908a1aeba75afe378b9a3d"><div class="ttname"><a href="structspi__init.html#a99f68a0c70908a1aeba75afe378b9a3d">spi_init::spi_master</a></div><div class="ttdeci">uint8_t spi_master</div><div class="ttdef"><b>Definition:</b> spi.h:49</div></div>
+<div class="ttc" id="aspi_8c_html_a1e7be6b25998c5de553b91a05f05688e"><div class="ttname"><a href="spi_8c.html#a1e7be6b25998c5de553b91a05f05688e">spi_set_cs</a></div><div class="ttdeci">void spi_set_cs()</div><div class="ttdef"><b>Definition:</b> spi.c:59</div></div>
+<div class="ttc" id="astructspi__init_html_a233d8692a557dda9abcb20c48f93ab8b"><div class="ttname"><a href="structspi__init.html#a233d8692a557dda9abcb20c48f93ab8b">spi_init::double_speed</a></div><div class="ttdeci">uint8_t double_speed</div><div class="ttdef"><b>Definition:</b> spi.h:53</div></div>
+<div class="ttc" id="aspi_8h_html_a67d2c0b6e0ecbd0351958756e4830172"><div class="ttname"><a href="spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172">SPI_MOSI_PIN</a></div><div class="ttdeci">#define SPI_MOSI_PIN</div><div class="ttdef"><b>Definition:</b> spi.h:26</div></div>
+<div class="ttc" id="aspi_8h_html_a3c71b60b9234434f56b969618ab727bb"><div class="ttname"><a href="spi_8h.html#a3c71b60b9234434f56b969618ab727bb">spi_write_16</a></div><div class="ttdeci">void spi_write_16(uint16_t address, uint16_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:118</div></div>
+<div class="ttc" id="aspi_8h_html_aeaa3433a5414e2dcf0f181b2b45c94a6"><div class="ttname"><a href="spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6">spi_read_16</a></div><div class="ttdeci">uint16_t spi_read_16(uint16_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:99</div></div>
+<div class="ttc" id="aspi_8h_html_a49c959e2498ddd16d0200559610a2b1a"><div class="ttname"><a href="spi_8h.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a></div><div class="ttdeci">uint8_t spi_txrx(uint8_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:51</div></div>
+<div class="ttc" id="astructspi__init_html_ac95bd399ff3e7fcde381478ed02f5e08"><div class="ttname"><a href="structspi__init.html#ac95bd399ff3e7fcde381478ed02f5e08">spi_init::data_order</a></div><div class="ttdeci">uint8_t data_order</div><div class="ttdef"><b>Definition:</b> spi.h:48</div></div>
+<div class="ttc" id="aspi_8c_html_af96c185938136ddabfc2f84d15343dae"><div class="ttname"><a href="spi_8c.html#af96c185938136ddabfc2f84d15343dae">spi_write_8</a></div><div class="ttdeci">void spi_write_8(uint8_t address, uint8_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:85</div></div>
+<div class="ttc" id="aspi_8c_html_a8c81a5a53a9561c361d28387b2effbf6"><div class="ttname"><a href="spi_8c.html#a8c81a5a53a9561c361d28387b2effbf6">spi_init</a></div><div class="ttdeci">void spi_init(spi_init_t *spi_settings)</div><div class="ttdef"><b>Definition:</b> spi.c:10</div></div>
+<div class="ttc" id="aspi_8h_html_aee89f642bb559e12db93e9f412ea185e"><div class="ttname"><a href="spi_8h.html#aee89f642bb559e12db93e9f412ea185e">SPI_SCK_PIN</a></div><div class="ttdeci">#define SPI_SCK_PIN</div><div class="ttdef"><b>Definition:</b> spi.h:27</div></div>
+<div class="ttc" id="astructspi__init_html_abadd560fb382ec31c492109cb74c57a5"><div class="ttname"><a href="structspi__init.html#abadd560fb382ec31c492109cb74c57a5">spi_init::clock_phase</a></div><div class="ttdeci">uint8_t clock_phase</div><div class="ttdef"><b>Definition:</b> spi.h:51</div></div>
+<div class="ttc" id="aspi_8h_html_a0f7827e60e5abe2dfae19039234a22a9"><div class="ttname"><a href="spi_8h.html#a0f7827e60e5abe2dfae19039234a22a9">SPI_DORD_MSB</a></div><div class="ttdeci">#define SPI_DORD_MSB</div><div class="ttdef"><b>Definition:</b> spi.h:30</div></div>
+<div class="ttc" id="amain_8c_html_a840291bc02cba5474a4cb46a9b9566fe"><div class="ttname"><a href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe">main</a></div><div class="ttdeci">int main(void)</div><div class="ttdef"><b>Definition:</b> main.c:22</div></div>
+<div class="ttc" id="aspi_8c_html_a87f438536813c8720479273ee6e8d028"><div class="ttname"><a href="spi_8c.html#a87f438536813c8720479273ee6e8d028">spi_read_8</a></div><div class="ttdeci">uint8_t spi_read_8(uint8_t address)</div><div class="ttdef"><b>Definition:</b> spi.c:70</div></div>
+<div class="ttc" id="aspi_8h_html_af96c185938136ddabfc2f84d15343dae"><div class="ttname"><a href="spi_8h.html#af96c185938136ddabfc2f84d15343dae">spi_write_8</a></div><div class="ttdeci">void spi_write_8(uint8_t address, uint8_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:85</div></div>
+<div class="ttc" id="aspi_8h_html_adc81a065700d3af56b6fb631585e3641"><div class="ttname"><a href="spi_8h.html#adc81a065700d3af56b6fb631585e3641">DUMMY_BYTE</a></div><div class="ttdeci">#define DUMMY_BYTE</div><div class="ttdef"><b>Definition:</b> spi.h:44</div></div>
+<div class="ttc" id="aspi_8c_html_a49c959e2498ddd16d0200559610a2b1a"><div class="ttname"><a href="spi_8c.html#a49c959e2498ddd16d0200559610a2b1a">spi_txrx</a></div><div class="ttdeci">uint8_t spi_txrx(uint8_t data)</div><div class="ttdef"><b>Definition:</b> spi.c:51</div></div>
+<div class="ttc" id="aspi_8h_html_a70dbacbc164ea714703098dc28527f2e"><div class="ttname"><a href="spi_8h.html#a70dbacbc164ea714703098dc28527f2e">spi_clear_cs</a></div><div class="ttdeci">void spi_clear_cs(void)</div><div class="ttdef"><b>Definition:</b> spi.c:64</div></div>
+<div class="ttc" id="aspi_8h_html_a8c81a5a53a9561c361d28387b2effbf6"><div class="ttname"><a href="spi_8h.html#a8c81a5a53a9561c361d28387b2effbf6">spi_init</a></div><div class="ttdeci">void spi_init(spi_init_t *spi_settings)</div><div class="ttdef"><b>Definition:</b> spi.c:10</div></div>
+<div class="ttc" id="aas5048a_8h_html"><div class="ttname"><a href="as5048a_8h.html">as5048a.h</a></div></div>
+<div class="ttc" id="aspi_8h_html_a8112c985f7444e82198d7571ce0a9160"><div class="ttname"><a href="spi_8h.html#a8112c985f7444e82198d7571ce0a9160">SPI_PORT</a></div><div class="ttdeci">#define SPI_PORT</div><div class="ttdef"><b>Definition:</b> spi.h:24</div></div>
+<div class="ttc" id="astructspi__init_html_a37996c542234e402a4f5d6985b8a4222"><div class="ttname"><a href="structspi__init.html#a37996c542234e402a4f5d6985b8a4222">spi_init::clock_rate</a></div><div class="ttdeci">uint8_t clock_rate</div><div class="ttdef"><b>Definition:</b> spi.h:52</div></div>
+<div class="ttc" id="aspi_8h_html_a004cf3f58494d716715d89416a39f1f3"><div class="ttname"><a href="spi_8h.html#a004cf3f58494d716715d89416a39f1f3">spi_init_t</a></div><div class="ttdeci">struct spi_init spi_init_t</div></div>
+<div class="ttc" id="astructspi__init_html_a10640ce360825c79c55c4153278c6cc1"><div class="ttname"><a href="structspi__init.html#a10640ce360825c79c55c4153278c6cc1">spi_init::clock_polarity</a></div><div class="ttdeci">uint8_t clock_polarity</div><div class="ttdef"><b>Definition:</b> spi.h:50</div></div>
+<div class="ttc" id="aspi_8h_html_af792feb13ae0c1eab8f95f64c8baa96d"><div class="ttname"><a href="spi_8h.html#af792feb13ae0c1eab8f95f64c8baa96d">WRITE_CMD</a></div><div class="ttdeci">#define WRITE_CMD</div><div class="ttdef"><b>Definition:</b> spi.h:21</div></div>
+<div class="ttc" id="aspi_8h_html_ad315c5b0bf1d3cd5a38b85b54f45d8a2"><div class="ttname"><a href="spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2">SPI_CS_PIN</a></div><div class="ttdeci">#define SPI_CS_PIN</div><div class="ttdef"><b>Definition:</b> spi.h:25</div></div>
+<div class="ttc" id="aspi_8h_html_a8f0ea6d1206fd3ac0739ccba7fab3c7c"><div class="ttname"><a href="spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c">spi_set_cs</a></div><div class="ttdeci">void spi_set_cs(void)</div><div class="ttdef"><b>Definition:</b> spi.c:59</div></div>
+<div class="ttc" id="aspi_8h_html_a5f2c52a683fbed71a8d5ee10e196fad7"><div class="ttname"><a href="spi_8h.html#a5f2c52a683fbed71a8d5ee10e196fad7">SPI_FCPU_DIV_4</a></div><div class="ttdeci">#define SPI_FCPU_DIV_4</div><div class="ttdef"><b>Definition:</b> spi.h:35</div></div>
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.17
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="spi_8h.html">spi.h</a></li>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
 </body>
 </html>
