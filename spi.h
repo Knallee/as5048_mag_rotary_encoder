@@ -68,6 +68,28 @@ void spi_init(spi_init_t *spi_settings);
 
 
 /**
+* Sending and receiving a byte by SPI.
+*
+* @param data		This is the byte that will be sent.
+* @return 			Returns the received data.
+*/
+uint8_t spi_txrx(uint8_t data);
+
+
+
+
+/**
+* Sending and receiving 16 bits as one package.
+*
+* @param data		This is the 16 bits that will be sent.
+* @return 			Returns the received 16 bits.
+*/
+uint16_t spi_txrx_16bit(uint16_t data);
+
+
+
+
+/**
 * Set CS pin to high.
 */
 void spi_set_cs(void);
@@ -79,61 +101,6 @@ void spi_set_cs(void);
 * Set CS pin to low.
 */
 void spi_clear_cs(void);
-
-
-
-
-/**
-* Sending and receiving a byte by SPI.
-*
-* @param data		This is the byte that will be sent.
-* @return 			Returns the Master In Slave Out data.
-*/
-uint8_t spi_txrx(uint8_t data);
-
-
-
-
-/**
-* This function performs a 8-bit read of the specified register address.
-*
-* @param address	This is the address of the register to be read.
-* @return 			The value of the specified register.
-*/
-uint8_t spi_read_8(uint8_t address);
-
-
-
-
-/**
-* This function writes data to specified register.
-*
-* @param address	This is the address of the register to be written.
-* @param data		This is the data that will be written.
-*/
-void spi_write_8(uint8_t address, uint8_t data);
-
-
-
-
-/**
-*  This function performs a 16-bit read of the specified register address.
-*
-* @param address	This is the 16-bit address of the register to be written.
-* @return int16		Returns the value of the specified register.
-*/
-uint16_t spi_read_16(uint16_t address);
-
-
-
-
-/**
-*  This function writes a 16-bit value to a specified register address.
-*
-* @param address	This is the 16-bit address of the register to be written.
-* @param data		This is the second parameter to the function add_num
-*/
-void spi_write_16(uint16_t address, uint16_t data);
 
 
 #endif /* SPI_H_ */

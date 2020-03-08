@@ -5,7 +5,7 @@ var as5048a_8h =
     [ "CORDIC_OF_BIT", "as5048a_8h.html#ae6f3b8d948da7dec9015a3122df5b6c3", null ],
     [ "ERROR_FLAG", "as5048a_8h.html#a0a8c178f536fdedde62cfd1ef70796e0", null ],
     [ "OCF_BIT", "as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35", null ],
-    [ "PARITY_BIT", "as5048a_8h.html#a3fe0dea7b30a55d84f5763338956eb44", null ],
+    [ "PARITY_BIT_POSITION", "as5048a_8h.html#a49061f7cc49133c7ea709a68096f2da8", null ],
     [ "READ", "as5048a_8h.html#ada74e7db007a68e763f20c17f2985356", null ],
     [ "REG_AGC", "as5048a_8h.html#ae54a3e889b478eecd40e42964d58f988", null ],
     [ "REG_ANGLE", "as5048a_8h.html#a91485a1691b7e7fa66ca178304c6b9dd", null ],

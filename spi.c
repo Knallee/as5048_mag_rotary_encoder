@@ -48,12 +48,20 @@ void spi_init(spi_init_t *spi_settings)
 
 
 
-uint8_t spi_txrx(uint8_t data)
+uint8_t spi_txrx_byte(uint8_t data)
 {
-	/* SPI transmit and receive */
 	SPDR = data;
 	while (!(SPSR & (1 << SPIF)));
 	return SPDR;
+}
+
+uint16_t spi_txrx_16bit(uint16_t data)
+{
+	uint8_t hi_byte, low_byte;
+	hi_byte = spi_txrx_byte(data >> 8);
+	low_byte = spi_txrx_byte((uint8_t) data);
+	
+	return ((hi_byte << 8) | (low_byte));
 }
 
 void spi_set_cs()
@@ -67,65 +75,3 @@ void spi_clear_cs()
 }
 
 
-uint8_t spi_read_8(uint8_t address)
-{	
-	spi_clear_cs();
-	spi_txrx(address | (READ_CMD << 7));
-	spi_set_cs();
-
-	_delay_us(SPI_CS_DELAY);
-
-	spi_clear_cs();
-	uint8_t data = spi_txrx(DUMMY_BYTE);
-	spi_set_cs();
-	
-	return data;
-}
-
-void spi_write_8(uint8_t address, uint8_t data)
-{
-	spi_clear_cs();
-	spi_txrx(address | (WRITE_CMD << 7));
-	spi_set_cs();
-	
-	_delay_us(SPI_CS_DELAY);
-
-	spi_clear_cs();
-	spi_txrx(data);
-	spi_set_cs();
-	
-}
-
-uint16_t spi_read_16(uint16_t address)
-{
-	uint8_t ms_byte, ls_byte;
-
-	spi_clear_cs();
-	spi_txrx((address >> 8) | (READ_CMD << 7)); // <------------ if zero this will not work!!
-	spi_txrx((uint8_t) address);
-	spi_set_cs();
-	
-	_delay_us(SPI_CS_DELAY);
-
-	spi_clear_cs();
-	ms_byte = spi_txrx(DUMMY_BYTE);
-	ls_byte = spi_txrx(DUMMY_BYTE);
-	spi_set_cs();
-	
-	return (ms_byte << 8) | ls_byte;
-}
-
-void spi_write_16(uint16_t address, uint16_t data)
-{
-	spi_clear_cs();
-	spi_txrx((address >> 8) | (WRITE_CMD << 7));
-	spi_txrx((uint8_t) address);
-	spi_set_cs();
-	
-	_delay_us(SPI_CS_DELAY);
-
-	spi_clear_cs();
-	spi_txrx(data >> 8);
-	spi_txrx((uint8_t) data);
-	spi_set_cs();
-}

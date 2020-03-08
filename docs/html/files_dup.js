@@ -5,5 +5,7 @@ var files_dup =
     [ "fcpu.h", "fcpu_8h.html", "fcpu_8h" ],
     [ "main.c", "main_8c.html", "main_8c" ],
     [ "spi.c", "spi_8c.html", "spi_8c" ],
-    [ "spi.h", "spi_8h.html", "spi_8h" ]
+    [ "spi.h", "spi_8h.html", "spi_8h" ],
+    [ "uart.c", "uart_8c.html", "uart_8c" ],
+    [ "uart.h", "uart_8h.html", "uart_8h" ]
 ];

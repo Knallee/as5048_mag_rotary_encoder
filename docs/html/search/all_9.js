@@ -1,30 +1,4 @@
 var searchData=
 [
-  ['spi_2ec_36',['spi.c',['../spi_8c.html',1,'']]],
-  ['spi_2eh_37',['spi.h',['../spi_8h.html',1,'']]],
-  ['spi_5fclear_5fcs_38',['spi_clear_cs',['../spi_8c.html#a9c6f53a999e69f237e7e3979e4c8eb00',1,'spi_clear_cs():&#160;spi.c'],['../spi_8h.html#a70dbacbc164ea714703098dc28527f2e',1,'spi_clear_cs(void):&#160;spi.c']]],
-  ['spi_5fclock_5fphase_39',['SPI_CLOCK_PHASE',['../spi_8h.html#aa55bedc710f39dd1d81a5a0fd30787d7',1,'spi.h']]],
-  ['spi_5fclock_5fpolarity_40',['SPI_CLOCK_POLARITY',['../spi_8h.html#ad2860a8e1f089771ed78489bda642ded',1,'spi.h']]],
-  ['spi_5fcs_5fdelay_41',['SPI_CS_DELAY',['../spi_8h.html#ac26310f398a0724ed7603b677c329ca5',1,'spi.h']]],
-  ['spi_5fcs_5fpin_42',['SPI_CS_PIN',['../spi_8h.html#ad315c5b0bf1d3cd5a38b85b54f45d8a2',1,'spi.h']]],
-  ['spi_5fddr_43',['SPI_DDR',['../spi_8h.html#a8b07abe3c166558485851f24f2141dc9',1,'spi.h']]],
-  ['spi_5fdord_5fmsb_44',['SPI_DORD_MSB',['../spi_8h.html#a0f7827e60e5abe2dfae19039234a22a9',1,'spi.h']]],
-  ['spi_5fdouble_5frate_45',['SPI_DOUBLE_RATE',['../spi_8h.html#ad87a91468e2b5ecaceaaeb7b0d2445ec',1,'spi.h']]],
-  ['spi_5ffcpu_5fdiv_5f128_46',['SPI_FCPU_DIV_128',['../spi_8h.html#a8d75c5edb0a48856ef46097f8ad5ef7e',1,'spi.h']]],
-  ['spi_5ffcpu_5fdiv_5f16_47',['SPI_FCPU_DIV_16',['../spi_8h.html#aa1d57434022362bdfe784add8ab24dcb',1,'spi.h']]],
-  ['spi_5ffcpu_5fdiv_5f4_48',['SPI_FCPU_DIV_4',['../spi_8h.html#a5f2c52a683fbed71a8d5ee10e196fad7',1,'spi.h']]],
-  ['spi_5ffcpu_5fdiv_5f64_49',['SPI_FCPU_DIV_64',['../spi_8h.html#a45024eed19751d8f9b3ac0d41c0f2073',1,'spi.h']]],
-  ['spi_5finit_50',['spi_init',['../structspi__init.html',1,'spi_init'],['../spi_8c.html#a8c81a5a53a9561c361d28387b2effbf6',1,'spi_init(spi_init_t *spi_settings):&#160;spi.c'],['../spi_8h.html#a8c81a5a53a9561c361d28387b2effbf6',1,'spi_init(spi_init_t *spi_settings):&#160;spi.c']]],
-  ['spi_5finit_5ft_51',['spi_init_t',['../spi_8h.html#a004cf3f58494d716715d89416a39f1f3',1,'spi.h']]],
-  ['spi_5fmaster_52',['spi_master',['../structspi__init.html#a99f68a0c70908a1aeba75afe378b9a3d',1,'spi_init::spi_master()'],['../spi_8h.html#ae09a2779c2d141aa6a8f8be6d78fe210',1,'SPI_MASTER():&#160;spi.h']]],
-  ['spi_5fmosi_5fpin_53',['SPI_MOSI_PIN',['../spi_8h.html#a67d2c0b6e0ecbd0351958756e4830172',1,'spi.h']]],
-  ['spi_5fport_54',['SPI_PORT',['../spi_8h.html#a8112c985f7444e82198d7571ce0a9160',1,'spi.h']]],
-  ['spi_5fread_5f16_55',['spi_read_16',['../spi_8c.html#aeaa3433a5414e2dcf0f181b2b45c94a6',1,'spi_read_16(uint16_t address):&#160;spi.c'],['../spi_8h.html#aeaa3433a5414e2dcf0f181b2b45c94a6',1,'spi_read_16(uint16_t address):&#160;spi.c']]],
-  ['spi_5fread_5f8_56',['spi_read_8',['../spi_8c.html#a87f438536813c8720479273ee6e8d028',1,'spi_read_8(uint8_t address):&#160;spi.c'],['../spi_8h.html#a87f438536813c8720479273ee6e8d028',1,'spi_read_8(uint8_t address):&#160;spi.c']]],
-  ['spi_5fsck_5fpin_57',['SPI_SCK_PIN',['../spi_8h.html#aee89f642bb559e12db93e9f412ea185e',1,'spi.h']]],
-  ['spi_5fset_5fcs_58',['spi_set_cs',['../spi_8c.html#a1e7be6b25998c5de553b91a05f05688e',1,'spi_set_cs():&#160;spi.c'],['../spi_8h.html#a8f0ea6d1206fd3ac0739ccba7fab3c7c',1,'spi_set_cs(void):&#160;spi.c']]],
-  ['spi_5fsettings_59',['spi_settings',['../main_8c.html#a664559792f6af834050aadb27cd9ec50',1,'main.c']]],
-  ['spi_5ftxrx_60',['spi_txrx',['../spi_8c.html#a49c959e2498ddd16d0200559610a2b1a',1,'spi_txrx(uint8_t data):&#160;spi.c'],['../spi_8h.html#a49c959e2498ddd16d0200559610a2b1a',1,'spi_txrx(uint8_t data):&#160;spi.c']]],
-  ['spi_5fwrite_5f16_61',['spi_write_16',['../spi_8c.html#a3c71b60b9234434f56b969618ab727bb',1,'spi_write_16(uint16_t address, uint16_t data):&#160;spi.c'],['../spi_8h.html#a3c71b60b9234434f56b969618ab727bb',1,'spi_write_16(uint16_t address, uint16_t data):&#160;spi.c']]],
-  ['spi_5fwrite_5f8_62',['spi_write_8',['../spi_8c.html#af96c185938136ddabfc2f84d15343dae',1,'spi_write_8(uint8_t address, uint8_t data):&#160;spi.c'],['../spi_8h.html#af96c185938136ddabfc2f84d15343dae',1,'spi_write_8(uint8_t address, uint8_t data):&#160;spi.c']]]
+  ['ocf_5fbit_34',['OCF_BIT',['../as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35',1,'as5048a.h']]]
 ];

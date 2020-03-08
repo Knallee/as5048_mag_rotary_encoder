@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['comp_5fhigh_5fbit_96',['COMP_HIGH_BIT',['../as5048a_8h.html#a2162a26e2e567ab6541a4278881be631',1,'as5048a.h']]],
-  ['comp_5flow_5fbit_97',['COMP_LOW_BIT',['../as5048a_8h.html#aa31ce9bf9f252da3d5c4fb4413cc426a',1,'as5048a.h']]],
-  ['cordic_5fof_5fbit_98',['CORDIC_OF_BIT',['../as5048a_8h.html#ae6f3b8d948da7dec9015a3122df5b6c3',1,'as5048a.h']]]
+  ['baud_5frate_5f0_184',['BAUD_RATE_0',['../uart_8c.html#afa421c0515c9a7a71f6afcce160c9eac',1,'uart.c']]],
+  ['baud_5frate_5f1_185',['BAUD_RATE_1',['../uart_8c.html#a3900fe5233c22167ada5dd31aca01907',1,'uart.c']]]
 ];
