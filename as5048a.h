@@ -52,6 +52,10 @@
 #define READ			1
 #define WRITE			0
 
+
+/* Constants */
+#define	 BIT14_VALUE		16384			/**< 2^14 */
+
 // One time programming function, used only once
 // void as5048_otp();	
 
@@ -106,5 +110,14 @@ uint8_t calc_parity(uint16_t data);
 *				0		Framing error	(Master -> as5048)
 */
 uint16_t com_error_check(uint16_t data);
+
+
+/** 
+* Decodes angle value.
+*
+* @param	Received data (14 bit).
+* @return	Returns angle value in a range [0, 360].
+*/
+uint16_t angle_decode(uint16_t data);
 
 #endif /* AS5048A_H_ */

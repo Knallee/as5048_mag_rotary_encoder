@@ -61,3 +61,6 @@ uint8_t calc_parity(uint16_t data)
 	return count & 0x1;
 }
 
+uint16_t angle_decode(uint16_t data) {
+	return (data * (360/ BIT14_VALUE) );
+}
