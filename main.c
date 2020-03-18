@@ -32,6 +32,7 @@ volatile uint8_t rx_data;
 
 
 void uart_init(void);
+uint16_t val;
 
 int main(void)
 {
@@ -50,8 +51,10 @@ int main(void)
 		//SPI_PORT |= (1 << SPI_CS_PIN);
   		//spi_txrx_16bit(0b0000111101010101);
 		//spi_read_8(0b01010101);
-		usart1_tx_string("Hello world");
-		_delay_ms(1000);
+		usart1_send_two_byte_as_ascii_string(val);
+		val += 5;
+		if (val == 65535) val = 0;
+		_delay_ms(1);
 
     }
 }

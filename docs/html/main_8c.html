@@ -100,15 +100,16 @@ Include dependency graph for main.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c__incl.png" border="0" usemap="#main_8c" alt=""/></div>
 <map name="main_8c" id="main_8c">
-<area shape="rect" title=" " alt="" coords="159,5,221,32"/>
+<area shape="rect" title=" " alt="" coords="189,5,250,32"/>
 <area shape="rect" href="fcpu_8h.html" title=" " alt="" coords="5,229,63,256"/>
-<area shape="rect" title=" " alt="" coords="306,80,367,107"/>
+<area shape="rect" title=" " alt="" coords="387,80,449,107"/>
 <area shape="rect" title=" " alt="" coords="197,229,260,256"/>
-<area shape="rect" title=" " alt="" coords="392,80,492,107"/>
-<area shape="rect" href="uart_8h.html" title=" " alt="" coords="41,155,96,181"/>
-<area shape="rect" href="spi_8h.html" title=" " alt="" coords="121,155,171,181"/>
-<area shape="rect" href="as5048a_8h.html" title=" " alt="" coords="149,80,231,107"/>
+<area shape="rect" title=" " alt="" coords="473,80,573,107"/>
+<area shape="rect" href="uart_8h.html" title=" " alt="" coords="44,155,99,181"/>
+<area shape="rect" href="spi_8h.html" title=" " alt="" coords="123,155,174,181"/>
+<area shape="rect" href="as5048a_8h.html" title=" " alt="" coords="178,80,261,107"/>
 <area shape="rect" title=" " alt="" coords="87,229,173,256"/>
+<area shape="rect" title=" " alt="" coords="249,155,313,181"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -129,6 +130,8 @@ Variables</h2></td></tr>
 <tr class="separator:a572134979b3afb145697710b2eb648ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6246e9cebd0a6b16d109975902769d06"><td class="memItemLeft" align="right" valign="top">volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a6246e9cebd0a6b16d109975902769d06">rx_data</a></td></tr>
 <tr class="separator:a6246e9cebd0a6b16d109975902769d06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a757344f09097232d715d55cbf9d61a43"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8c.html#a757344f09097232d715d55cbf9d61a43">val</a></td></tr>
+<tr class="separator:a757344f09097232d715d55cbf9d61a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="ae6e8a8009a9ae0c59f25a496d1cf5a84"></a>
@@ -169,11 +172,13 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph.png" border="0" usemap="#main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" alt=""/></div>
 <map name="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph" id="main_8c_a840291bc02cba5474a4cb46a9b9566fe_cgraph">
-<area shape="rect" title=" " alt="" coords="5,31,56,57"/>
-<area shape="rect" href="main_8c.html#a0c0ca72359ddf28dcd15900dfba19343" title=" " alt="" coords="127,5,195,32"/>
-<area shape="rect" href="uart_8c.html#a65d898186a26777388e6c2ce2690ae74" title=" " alt="" coords="104,56,219,83"/>
-<area shape="rect" href="uart_8c.html#aefbe8b9d4266e74eb7657b389a49b85c" title=" " alt="" coords="267,5,407,32"/>
-<area shape="rect" href="uart_8c.html#ada62a64970465330f45a1ab6d2506222" title=" " alt="" coords="283,56,391,83"/>
+<area shape="rect" title=" " alt="" coords="5,35,56,61"/>
+<area shape="rect" href="main_8c.html#a0c0ca72359ddf28dcd15900dfba19343" title=" " alt="" coords="146,5,214,32"/>
+<area shape="rect" href="uart_8c.html#aab5bdcd66cc0e9dffe39adcbbe1e7cc8" title=" " alt="" coords="104,57,256,98"/>
+<area shape="rect" href="uart_8c.html#aefbe8b9d4266e74eb7657b389a49b85c" title=" " alt="" coords="304,5,444,32"/>
+<area shape="rect" href="uart_8c.html#a5773f7d7708ef6aef3b621d997651d74" title=" " alt="" coords="320,60,428,87"/>
+<area shape="rect" href="uart_8c.html#a65d898186a26777388e6c2ce2690ae74" title=" " alt="" coords="317,111,431,137"/>
+<area shape="rect" href="uart_8c.html#ada62a64970465330f45a1ab6d2506222" title=" " alt="" coords="492,111,600,137"/>
 </map>
 </div>
 
@@ -252,6 +257,20 @@ Here is the caller graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">volatile <a class="el" href="uart_8h.html#a086fb2dbda58b4ea5acbc497d78fe42e">usart1_t</a>* usart1 = (volatile <a class="el" href="uart_8h.html#a086fb2dbda58b4ea5acbc497d78fe42e">usart1_t</a> *) 0x000000C8</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a757344f09097232d715d55cbf9d61a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a757344f09097232d715d55cbf9d61a43">&#9670;&nbsp;</a></span>val</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t val</td>
         </tr>
       </table>
 </div><div class="memdoc">

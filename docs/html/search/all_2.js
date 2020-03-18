@@ -7,5 +7,6 @@ var searchData=
   ['com_5ferror_5fcheck_12',['com_error_check',['../as5048a_8c.html#a28cfea26cbff84a2082170590fe6ebf4',1,'com_error_check(uint16_t data):&#160;as5048a.c'],['../as5048a_8h.html#a28cfea26cbff84a2082170590fe6ebf4',1,'com_error_check(uint16_t data):&#160;as5048a.c']]],
   ['comp_5fhigh_5fbit_13',['COMP_HIGH_BIT',['../as5048a_8h.html#a2162a26e2e567ab6541a4278881be631',1,'as5048a.h']]],
   ['comp_5flow_5fbit_14',['COMP_LOW_BIT',['../as5048a_8h.html#aa31ce9bf9f252da3d5c4fb4413cc426a',1,'as5048a.h']]],
-  ['cordic_5fof_5fbit_15',['CORDIC_OF_BIT',['../as5048a_8h.html#ae6f3b8d948da7dec9015a3122df5b6c3',1,'as5048a.h']]]
+  ['cordic_5fof_5fbit_15',['CORDIC_OF_BIT',['../as5048a_8h.html#ae6f3b8d948da7dec9015a3122df5b6c3',1,'as5048a.h']]],
+  ['cr_16',['CR',['../uart_8h.html#a876ce77f3c672c7162658151e648389e',1,'uart.h']]]
 ];

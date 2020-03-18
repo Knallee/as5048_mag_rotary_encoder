@@ -9,9 +9,11 @@
 #ifndef AS5048A_H_
 #define AS5048A_H_
 
+#include <stdlib.h>
 #include <avr/io.h>
 
 #include "spi.h"
+#include "uart.h"
 
 /* Control and Error Registers */
 #define REG_NOP			0x0000		/**< Dummy register. */
@@ -104,6 +106,5 @@ uint8_t calc_parity(uint16_t data);
 *				0		Framing error	(Master -> as5048)
 */
 uint16_t com_error_check(uint16_t data);
-
 
 #endif /* AS5048A_H_ */

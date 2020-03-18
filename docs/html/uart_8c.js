@@ -8,6 +8,8 @@ var uart_8c =
     [ "usart0_tx_char", "uart_8c.html#afba3c5b68c5b6f9e31a381ea22694bb5", null ],
     [ "usart0_tx_data", "uart_8c.html#a0c476fca6dfde9eef1c9b54580ab269c", null ],
     [ "usart0_tx_string", "uart_8c.html#af870e58ac1cc49c770cd858cb12103e7", null ],
+    [ "usart1_send_byte_as_ascii_string", "uart_8c.html#ac4da4c3fb716a4c91061a1327d8be82a", null ],
+    [ "usart1_send_two_byte_as_ascii_string", "uart_8c.html#aab5bdcd66cc0e9dffe39adcbbe1e7cc8", null ],
     [ "usart1_set_baudrate", "uart_8c.html#aefbe8b9d4266e74eb7657b389a49b85c", null ],
     [ "usart1_tx_char", "uart_8c.html#ada62a64970465330f45a1ab6d2506222", null ],
     [ "usart1_tx_data", "uart_8c.html#a5773f7d7708ef6aef3b621d997651d74", null ],

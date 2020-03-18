@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ocf_5fbit_196',['OCF_BIT',['../as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35',1,'as5048a.h']]]
+  ['lf_207',['LF',['../uart_8h.html#a350c9d6cb81908d59427ee96844d1a9c',1,'uart.h']]]
 ];

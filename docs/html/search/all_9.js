@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['ocf_5fbit_34',['OCF_BIT',['../as5048a_8h.html#a6cfb0915d4b38273db1b96c635d34c35',1,'as5048a.h']]]
+  ['nbr_5fdata_5fbits_5fc_35',['nbr_data_bits_c',['../structusart0__regs.html#aa49d70f14a8d8bcf83903030b1a27ac8',1,'usart0_regs::nbr_data_bits_c()'],['../structusart1__regs.html#aa49d70f14a8d8bcf83903030b1a27ac8',1,'usart1_regs::nbr_data_bits_c()']]],
+  ['nbr_5fstop_5fbits_36',['nbr_stop_bits',['../structusart0__regs.html#a1f592cac2f5d6c5db6c1c4d4aeacdbb3',1,'usart0_regs::nbr_stop_bits()'],['../structusart1__regs.html#a1f592cac2f5d6c5db6c1c4d4aeacdbb3',1,'usart1_regs::nbr_stop_bits()']]]
 ];

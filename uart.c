@@ -62,3 +62,19 @@ void usart1_set_baudrate()
 {
 	UBRR1 = UBBR1_VAL;
 }
+
+void usart1_send_byte_as_ascii_string(uint8_t val)
+{
+	char string[4];
+	itoa(val, string, 10);
+	usart1_tx_string(string);
+	usart1_tx_data(END_OF_TX_CHAR);
+}
+
+void usart1_send_two_byte_as_ascii_string(uint16_t val)
+{
+	char string[6];
+	itoa(val, string, 10);
+	usart1_tx_string(string);
+	usart1_tx_data(END_OF_TX_CHAR);
+}

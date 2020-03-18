@@ -40,12 +40,17 @@
 #define USART_MODE_SYNC				1	/**< Set .usart_mode to synchronous mode. */
 #define USART_MODE_MSPI3			3	/**< Set .usart_mode for disable parity. This is default. */
 
+#define CR							0xD
+#define LF							0xA
+
+#define END_OF_TX_CHAR				CR
 
 
 
 
-
-
+/**
+ * A bitfield representing usart0 control and status registers.
+ */
 typedef struct usart0_regs {
 	volatile uint8_t multi_processor_mode 		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t double_speed				: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
@@ -73,7 +78,9 @@ typedef struct usart0_regs {
 } usart0_t;
 
 
-
+/**
+ * A bitfield representing usart1 control and status registers.
+ */
 typedef struct usart1_regs{
 	volatile uint8_t multi_processor_mode 		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t double_speed				: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
@@ -113,5 +120,8 @@ void usart1_tx_data(uint8_t data);
 void usart1_tx_char(char ch);
 void usart1_tx_string(char *string);
 void usart1_set_baudrate();
+
+void usart1_send_byte_as_ascii_string(uint8_t val);
+void usart1_send_two_byte_as_ascii_string(uint16_t val);
 
 #endif /* UART_H_ */
