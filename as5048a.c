@@ -8,45 +8,30 @@
 #include "as5048a.h"
 
 uint16_t as5048_read_angle() {
-	uint16_t data = (READ << RW_BIT_POSITION) | REG_ANGLE;							/**< Read bit + Register. */
-	// TODO: Error checking 
-	spi_clear_cs();
-	uint16_t rx_data = spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output */
-	spi_set_cs();
-	return rx_data;
+	uint16_t data = (READ << RW_BIT_POSITION) | REG_ANGLE;								/**< Read bit + Register. */
+	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);			/**< Send Parity bit + Register and return output */
 }
 
 uint16_t as5048_read_magnitude() {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_MAGNITUDE;						/**< Read bit + Register. */
-	// TODO: Error checking 
-	return spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);	/**< Send Parity bit + Register and return output. */
+	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output. */
 }
 
 uint16_t as5048_read_agc()
 {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_AGC;							/**< Read bit + Register. */
-	// TODO: Error checking 
-	
-	uint16_t tx_data = (calc_parity(data) << PARITY_BIT_POSITION) | data;
-	spi_clear_cs();
-	uint16_t rx_data = spi_txrx_16bit(tx_data);		/**< Send Parity bit + Register and return output.  */
-	spi_set_cs();
-	return rx_data;
+	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output.  */
 }
 
 uint16_t as5048_clear_error()
 {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_CLR_ERR;									/**< Read bit + Register. */
-	// TODO: Error checking 
-	spi_clear_cs();
-	uint16_t dummy_data = spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);
-	spi_set_cs();
-	return dummy_data;		/**< Send Parity bit + Register and return output. */	
+	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);					/**< Send Parity bit + Register and return output. */	
 }
 
 uint16_t com_error_check(uint16_t data)
 {
-	uint8_t err = 0;																		/**< Error data that would be used for output if there are communication errors. */
+	uint16_t err = 0;																		/**< Error data that would be used for output if there are communication errors. */
 	if ( ((data >> ERROR_FLAG) & 0x01) == 0) {												/**< Check if there is communication error between master and as5048. */
 		if ( calc_parity(data << 1) == ((uint8_t) (data >> PARITY_BIT_POSITION)) ) {		/**< Check if data received from as5048 has correct parity. */
 			return data & 0x3FFF;															/**< Communication is error-free, return 14 bit data. */
@@ -74,4 +59,17 @@ uint8_t calc_parity(uint16_t data)
 
 uint16_t angle_decode(uint16_t data) {
 	return (data * (360/ BIT14_VALUE) );
+}
+
+uint16_t send_and_receive(uint16_t transmit_data) {
+	uint16_t received_data;
+	spi_clear_cs();
+	received_data = spi_txrx_16bit(transmit_data);				/* Request data */
+	spi_set_cs();
+	_delay_us(1);												/* Minimum 350 ns CS delay */
+	spi_clear_cs();
+	received_data = spi_txrx_16bit(REG_NOP);					/* Receives requested data from the last transmission */
+	spi_set_cs();	
+	// TODO: Error checking 
+	return received_data;
 }

@@ -39,17 +39,14 @@ volatile uint8_t rx_data;
 void uart_init(void);
 uint16_t val;
 
-uint16_t agc_data, error;
-uint16_t angle_data;
-uint16_t agc_data1, error1;
-uint16_t angle_data1;
+uint16_t agc_data, angle_data, error_data;
 uint16_t deg;
 uint8_t agc;
 
 int main(void)
 {
-	_delay_ms(100);
-	spi_set_cs();
+	_delay_ms(100);				/* Booting Windows */
+	spi_set_cs();	/* wot for? */
 	spi_init(&spi_settings);
 	
 
@@ -62,18 +59,20 @@ int main(void)
 	
 	
 	while (1) {
-		agc_data1 = as5048_read_angle();
-		angle_data = as5048_read_agc();
-
-		agc_data = as5048_read_angle();
-		angle_data1 = as5048_read_agc();
-
-
-
-
-		if (( agc_data & ((1<< CORDIC_OF_BIT)|(1<< COMP_HIGH_BIT)|(1<< COMP_LOW_BIT)) ) == 0) {			/**< Check diagnostics bits for magnetic compensation and CORDIC overflow which tells if data is valid. */
-			deg = angle_decode(angle_data);
-			agc = (uint8_t) agc_data;
+		agc_data = as5048_read_agc();
+		data_integrity(agc_data);				/* Check for error flag */
+		angle_data = as5048_read_angle();
+		data_integrity(angle_data);				/* Check for error flag */
+		
+		deg = angle_decode(angle_data);
+		agc = (uint8_t) agc_data;
+		usart0_tx_data(angle_data/2);	// 1 circle = 180 deg, deal with it!
+		usart0_tx_data(agc);
+		
+		
+		//if (( agc_data & ((1<< CORDIC_OF_BIT)|(1<< COMP_HIGH_BIT)|(1<< COMP_LOW_BIT)) ) == 0) {			/**< Check diagnostics bits for magnetic compensation and CORDIC overflow which tells if data is valid. */
+		//	deg = angle_decode(angle_data);
+		//	agc = (uint8_t) agc_data;
 			// TODO: UART output deg value
 		}
 	}
@@ -120,25 +119,34 @@ int main(void)
 //#endif
 
 
-
-
 void uart_init() {
-	
-
-
 	usart1->tx_enable = TRUE;
 	usart1->rx_enable = TRUE;
 	usart1->rx_complete_int_enable = TRUE;
 	usart1_set_baudrate();
-
 }
 
 ISR(USART1_RX_vect) {
-	
 	rx_data = UDR1;
 	UDR1 = rx_data;
-	
-	
-	
 }
 
+// Debugger
+void data_integrity(uint16_t data) {
+	uint16_t checker = com_error_check(data);
+	if ((checker & (1 << ERROR_FLAG)) == (1 << ERROR_FLAG)) {
+		usart0_tx_string("COM error lul! \n");
+		if((checker & (1 << PARITY_ERROR_MISO) != 0) {
+			usart0_tx_string("Parity error MISO. \n");
+		}
+		if((checker & (1 << PARITY_ERROR_MOSI) != 0) {
+			usart0_tx_string("Parity error MOSI. \n");
+		}
+		if((checker & (1 << COMMAND_INVALID) != 0) {
+			usart0_tx_string("Command Invalid. \n");
+		}
+		if((checker & (1 << FRAMING_ERROR) != 0) {
+			usart0_tx_string("Framing error. \n");
+		}
+	}
+}

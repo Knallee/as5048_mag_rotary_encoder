@@ -48,6 +48,13 @@
 #define ERROR_FLAG		14			/**< Error flag that indicates a transmission error in a previous host transmission. */
 
 
+/* Error bits (see com_error_check) */
+#define PARITY_ERROR_MISO	3			/**< Parity error (as5048 -> Master). */
+#define PARITY_ERROR_MOSI	2			/**< Parity error (Master -> as5048). */
+#define COMMAND_INVALID		1			/**< Command invalid (Master -> as5048). */
+#define FRAMING_ERROR		0			/**< Framing error	(Master -> as5048).  */
+
+
 /* Values of RW_BIT */
 #define READ			1
 #define WRITE			0
@@ -111,7 +118,6 @@ uint8_t calc_parity(uint16_t data);
 */
 uint16_t com_error_check(uint16_t data);
 
-
 /** 
 * Decodes angle value.
 *
@@ -119,5 +125,15 @@ uint16_t com_error_check(uint16_t data);
 * @return	Returns angle value in a range [0, 360].
 */
 uint16_t angle_decode(uint16_t data);
+
+/**
+* Sends and receives 16 bit SPI data packages.
+* 
+* P.S.: Inefficient. Sends NOP to receive data.
+*
+* @param	Data to be transfered to as5048a.
+* @return	Data from as5048a.
+*/
+uint16_t send_and_receive(uint16_t transmit_data);
 
 #endif /* AS5048A_H_ */
