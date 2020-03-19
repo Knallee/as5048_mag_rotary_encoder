@@ -66,8 +66,10 @@ int main(void)
 		
 		deg = angle_decode(angle_data);
 		agc = (uint8_t) agc_data;
-		usart0_tx_data(angle_data/2);	// 1 circle = 180 deg, deal with it!
-		usart0_tx_data(agc);
+		usart1_tx_data(angle_data/2);	// 1 circle = 180 deg, deal with it!
+		usart1_tx_char("\n");
+		usart1_tx_data(agc);
+		usart1_tx_char("\n");
 		
 		
 		//if (( agc_data & ((1<< CORDIC_OF_BIT)|(1<< COMP_HIGH_BIT)|(1<< COMP_LOW_BIT)) ) == 0) {			/**< Check diagnostics bits for magnetic compensation and CORDIC overflow which tells if data is valid. */
@@ -135,18 +137,23 @@ ISR(USART1_RX_vect) {
 void data_integrity(uint16_t data) {
 	uint16_t checker = com_error_check(data);
 	if ((checker & (1 << ERROR_FLAG)) == (1 << ERROR_FLAG)) {
-		usart0_tx_string("COM error lul! \n");
+		usart1_tx_string("COM error lul!");
+		usart1_tx_char("\n");
 		if((checker & (1 << PARITY_ERROR_MISO) != 0) {
-			usart0_tx_string("Parity error MISO. \n");
+			usart1_tx_string("Parity error MISO.");
+			usart1_tx_char("\n");
 		}
 		if((checker & (1 << PARITY_ERROR_MOSI) != 0) {
-			usart0_tx_string("Parity error MOSI. \n");
+			usart1_tx_string("Parity error MOSI.");
+			usart1_tx_char("\n");
 		}
 		if((checker & (1 << COMMAND_INVALID) != 0) {
-			usart0_tx_string("Command Invalid. \n");
+			usart1_tx_string("Command Invalid.");
+			usart1_tx_char("\n");
 		}
 		if((checker & (1 << FRAMING_ERROR) != 0) {
-			usart0_tx_string("Framing error. \n");
+			usart1_tx_string("Framing error.");
+			usart1_tx_char("\n");
 		}
 	}
 }
