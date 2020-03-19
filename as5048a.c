@@ -10,7 +10,10 @@
 uint16_t as5048_read_angle() {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_ANGLE;							/**< Read bit + Register. */
 	// TODO: Error checking 
-	return spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output */
+	spi_clear_cs();
+	uint16_t rx_data = spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output */
+	spi_set_cs();
+	return rx_data;
 }
 
 uint16_t as5048_read_magnitude() {
@@ -23,14 +26,22 @@ uint16_t as5048_read_agc()
 {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_AGC;							/**< Read bit + Register. */
 	// TODO: Error checking 
-	return spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output.  */
+	
+	uint16_t tx_data = (calc_parity(data) << PARITY_BIT_POSITION) | data;
+	spi_clear_cs();
+	uint16_t rx_data = spi_txrx_16bit(tx_data);		/**< Send Parity bit + Register and return output.  */
+	spi_set_cs();
+	return rx_data;
 }
 
-uint8_t as5048_clear_error()
+uint16_t as5048_clear_error()
 {
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_CLR_ERR;									/**< Read bit + Register. */
 	// TODO: Error checking 
-	return (uint8_t) spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output. */	
+	spi_clear_cs();
+	uint16_t dummy_data = spi_txrx_16bit((calc_parity(data) << PARITY_BIT_POSITION) | data);
+	spi_set_cs();
+	return dummy_data;		/**< Send Parity bit + Register and return output. */	
 }
 
 uint16_t com_error_check(uint16_t data)

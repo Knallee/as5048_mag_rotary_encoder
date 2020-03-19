@@ -7,11 +7,6 @@
 
  #include "uart.h"
  
-#define BAUD_RATE_0	9600UL									/**< USER INPUT. Set desired baud rate for usart0 */
-#define UBBR0_VAL	(((F_CPU)/(16UL * BAUD_RATE_0))-1)		/**< Calculates baud rate for usart0 */
-
-#define BAUD_RATE_1	9600UL									/**< USER INPUT. Set desired baud rate for usart1 */
-#define UBBR1_VAL	(((F_CPU)/(16UL * BAUD_RATE_1))-1)		/**< Calculates baud rate for usart1 */
 
 extern volatile usart0_t *usart0;
 extern volatile usart1_t *usart1;
@@ -38,9 +33,6 @@ void usart0_set_baudrate(int baud)
 	UBRR0 = UBBR0_VAL;
 }
 
-
-
-
 void usart1_tx_data(uint8_t data)
 {
 	while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
@@ -63,7 +55,7 @@ void usart1_set_baudrate()
 	UBRR1 = UBBR1_VAL;
 }
 
-void usart1_send_byte_as_ascii_string(uint8_t val)
+void usart1_send_uint8_as_ascii_string(uint8_t val)
 {
 	char string[4];
 	itoa(val, string, 10);
@@ -71,7 +63,7 @@ void usart1_send_byte_as_ascii_string(uint8_t val)
 	usart1_tx_data(END_OF_TX_CHAR);
 }
 
-void usart1_send_two_byte_as_ascii_string(uint16_t val)
+void usart1_send_uint16_as_ascii_string(uint16_t val)
 {
 	char string[6];
 	itoa(val, string, 10);

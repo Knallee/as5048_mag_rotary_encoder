@@ -85,7 +85,7 @@ uint16_t as5048_read_agc();
 *
 * @return	Returns error bits.
 */
-uint8_t as5048_clear_error();
+uint16_t as5048_clear_error();
 
 /**
 * Calculates Parity Bit.

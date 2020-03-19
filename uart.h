@@ -43,9 +43,14 @@
 #define CR							0xD
 #define LF							0xA
 
-#define END_OF_TX_CHAR				CR
+#define END_OF_TX_CHAR				CR	/**< User defined end of text character. Used by usart_send_uint8_as_ascii_string() and usart_send_uint16_as_ascii_string().*/
 
 
+#define BAUD_RATE_0	9600UL									/**< USER INPUT. Set desired baud rate for usart0 */
+#define UBBR0_VAL	(((F_CPU)/(16UL * BAUD_RATE_0))-1)		/**< Calculates baud rate for usart0 */
+
+#define BAUD_RATE_1	9600UL									/**< USER INPUT. Set desired baud rate for usart1 */
+#define UBBR1_VAL	(((F_CPU)/(16UL * BAUD_RATE_1))-1)		/**< Calculates baud rate for usart1 */
 
 
 /**
@@ -107,21 +112,71 @@ typedef struct usart1_regs{
 	volatile uint8_t usart_mode					: 2;	/**< Asynchronous, synchronous or master SPI. Use USART_MODE macros. Asynchronous by default.*/
 } usart1_t;
 
-
- //volatile usart0_t *usart0 = (volatile usart0_t *) 0x000000C0;
- //volatile usart1_t *usart1 = (volatile usart1_t *) 0x000000C8;
-
+/**
+* Sends a uint8_t.
+*
+* @param data		This is the value that will be sent.
+*/
 void usart0_tx_data(uint8_t data);
+
+/**
+* Sends a char.
+*
+* @param ch		This is the value that will be sent.
+*/
 void usart0_tx_char(char ch);
+
+/**
+* Sends a string.
+*
+* @param val		This is the string that will be sent.
+*/
 void usart0_tx_string(char *string);
+
+/**
+* Function that sets the usart baud rate for usart0. Specify the desired baud rate using the macro BAUD_RATE_0.
+*/
 void usart0_set_baudrate();
 
+/**
+* Sends a uint8_t.
+*
+* @param data		This is the value that will be sent.
+*/
 void usart1_tx_data(uint8_t data);
+
+/**
+* Sends a char.
+*
+* @param ch		This is the value that will be sent.
+*/
 void usart1_tx_char(char ch);
+
+/**
+* Sends a string.
+*
+* @param val		This is the string that will be sent.
+*/
 void usart1_tx_string(char *string);
+
+/**
+* Function that sets the usart baud rate for usart1. Specify the desired baud rate using the macro BAUD_RATE_1.
+*/
 void usart1_set_baudrate();
 
-void usart1_send_byte_as_ascii_string(uint8_t val);
-void usart1_send_two_byte_as_ascii_string(uint16_t val);
+
+/**
+* Sends a uint8_t as string. End of transmission is set by the macro END_OF_TX_CHAR.
+*
+* @param val		This is the value that will be sent.
+*/
+void usart1_send_uint8_as_ascii_string(uint8_t val);
+
+/**
+* Sends a uint16_t as string. End of transmission is set by the macro END_OF_TX_CHAR.
+*
+* @param val		This is the value that will be sent.
+*/
+void usart1_send_uint16_as_ascii_string(uint16_t val);
 
 #endif /* UART_H_ */

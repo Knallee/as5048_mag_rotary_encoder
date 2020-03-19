@@ -8,7 +8,7 @@ ser = serial.Serial('COM11', 9600)                         # Change to the actua
 
 adc_scale = 5/(2**24 - 1) # V/lsb
 
-x_len = 10000
+x_len = 1000
 
 min_val = 0
 max_val = 0
