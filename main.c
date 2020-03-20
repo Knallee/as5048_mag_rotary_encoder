@@ -2,7 +2,7 @@
  * as5048_mag_rotary_encoder.c
  *
  * Created: 2020-02-28 21:30:07
- * Author : Christoffer
+ * Author : 2AM PULLUPS
  */ 
 
 #include "fcpu.h"
@@ -19,26 +19,30 @@
 #define ENCODER_TEST	2
 #define UART_TEST		3
 
-#define MODE			
+#define MODE	
 
+// ATmega1284 Register Offsets
+#define UCSR0A_OFFSET	0x000000C0
+#define UCSR1A_OFFSET	0x000000C8
 
-volatile usart0_t *usart0 = (volatile usart0_t *) 0x000000C0;
-volatile usart1_t *usart1 = (volatile usart1_t *) 0x000000C8;
-
-
-spi_init_t spi_settings = { .data_order		= SPI_DORD_MSB,
-							.spi_master		= TRUE,
-							.clock_polarity = 1,
-							.clock_phase	= 0,
-							.clock_rate		= SPI_FCPU_DIV_16,
-							.double_speed	= FALSE};
-							
+volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET; // just UCSR0A?
+volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET; // just UCSR1A?
 volatile uint8_t rx_data;
 
+/*
+spi_init_t spi_settings = { 
+	.data_order		= SPI_DORD_MSB,						
+	.spi_master		= TRUE,
+	.clock_polarity = 1,
+	.clock_phase	= 0,
+	.clock_rate		= SPI_FCPU_DIV_16,
+	.double_speed	= FALSE
+};						
+*/
 
 void uart_init(void);
-uint16_t val;
 
+uint16_t val;
 uint16_t agc_data, angle_data, error_data;
 uint16_t deg;
 uint8_t agc;
@@ -47,10 +51,10 @@ int main(void)
 {
 	_delay_ms(100);				/* Booting Windows */
 	spi_set_cs();	/* wot for? */
-	spi_init(&spi_settings);
-	
-
+	// spi_init(&spi_settings);
+	spi_init();
 	uart_init();
+	
 	//sei();
 
 
@@ -122,11 +126,13 @@ int main(void)
 
 
 void uart_init() {
-	usart1->tx_enable = TRUE;
-	usart1->rx_enable = TRUE;
-	usart1->rx_complete_int_enable = TRUE;
+	usart1->tx_enable				= TRUE;
+	usart1->rx_enable				= TRUE;
+	usart1->rx_complete_int_enable	= TRUE;
+	usart1->multi_processor_mode	= TRUE;
 	usart1_set_baudrate();
 }
+
 
 ISR(USART1_RX_vect) {
 	rx_data = UDR1;

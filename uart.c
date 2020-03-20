@@ -2,7 +2,7 @@
  * uart.c
  *
  * Created: 2020-03-03 21:20:00
- *  Author: Knalle
+ *  Author: 2AM PULLUPS
  */
 
  #include "uart.h"

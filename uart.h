@@ -2,7 +2,7 @@
  * uart.h
  *
  * Created: 2020-03-03 21:20:28
- *  Author: Knalle
+ *  Author: 2AM PULLUPS
  */ 
 
 
@@ -69,8 +69,8 @@ typedef struct usart0_regs {
 	volatile uint8_t tx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t rx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t data_bits_9_b				: 1;	/**< Set this to TRUE (1) for nine data bits. nbr_data_bits_c needs to be set to USART_8_BITS_C. */
-	volatile uint8_t tx_enable					: 1;	/**< Set to TRUE (1) to enables the transmitter. */
-	volatile uint8_t rx_enable					: 1;	/**< Set to TRUE (1) to enables the receiver. */
+	volatile uint8_t tx_enable					: 1;	/**< Set to TRUE (1) to enable the transmitter. */
+	volatile uint8_t rx_enable					: 1;	/**< Set to TRUE (1) to enable the receiver. */
 	volatile uint8_t dreg_empty_int_enable		: 1;	/**< USART data register empty interrupt. Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default.*/
 	volatile uint8_t tx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t rx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */

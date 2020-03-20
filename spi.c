@@ -2,11 +2,14 @@
  * spi.c
  *
  * Created: 2020-02-28 21:33:23
- *  Author: Christoffer
+ *  Author: 2AM PULLUPS
  */ 
 
 #include "spi.h"
 
+volatile spi_reg_t *spi = (volatile spi_reg_t *) SPCR0;	// else SPCR0_OFFSET
+
+/*
 void spi_init(spi_init_t *spi_settings) 
 {
 	SPCR	|= (1 << SPE);
@@ -14,7 +17,7 @@ void spi_init(spi_init_t *spi_settings)
 	
 	if(spi_settings->spi_master == TRUE) {
 		SPCR |= (1 << MSTR);
-	} else if (spi_settings->spi_master == FALSE) {
+	} else {
 		SPCR &= ~(1 << MSTR);
 	}
 	
@@ -45,14 +48,30 @@ void spi_init(spi_init_t *spi_settings)
 	}
 
 }
+*/
 
+void spi_init(){
+	SPI_DDR	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
+	spi.enable			= TRUE;
+	spi.spi_master		= TRUE;		/** AVR is the master. */
+	spi.data_order		= SPI_DORD_MSB;
+	spi.clock_polarity	= HIGH;
+	spi.clock_phase		= 1;
+	spi.clock_rate		= SPI_FCPU_DIV_16;
+	spi.double_speed	= FALSE;
+}
 
 
 uint8_t spi_txrx_byte(uint8_t data)
 {
+	/* 
 	SPDR = data;
 	while (!(SPSR & (1 << SPIF)));
 	return SPDR;
+	*/
+	spi.data = data;
+	while (spi.interrupt_flag == 0);
+	return spi.data;
 }
 
 uint16_t spi_txrx_16bit(uint16_t data)

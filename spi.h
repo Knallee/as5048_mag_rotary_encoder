@@ -2,7 +2,7 @@
  * spi.h
  *
  * Created: 2020-02-28 21:33:38
- *  Author: Christoffer
+ *  Author: 2AM PULLUPS
  */ 
 
 
@@ -17,8 +17,8 @@
 #define TRUE	1
 #define FALSE	0
 
-#define READ_CMD	1		/**< Read command, slave specific*/
-#define WRITE_CMD	0		/**< Write command, slave specific*/
+#define HIGH	1
+#define LOW		0
 
 #define SPI_DDR				DDRB
 #define SPI_PORT			PORTB		/**< AVR SPI port*/
@@ -38,13 +38,14 @@
 #define SPI_FCPU_DIV_128		3		/**< F_CPU is divided by 128*/
 
 #define SPI_CS_DELAY			1		/**< The delay, in us, between consequent read or writes */ 
-											  
 
+#define SPCR0_OFFSET	0x0000004C	// USELESS?
 
 #define DUMMY_BYTE	0x00
 
 
-typedef struct spi_init {
+// OLD CRAP
+typedef struct spi_init {			// before: spi_init
 	uint8_t data_order;					/**< Set to TRUE (1) for MSB first*/
 	uint8_t spi_master;					/**< Set to TRUE (1) to be master*/
 	uint8_t clock_polarity;				/**< AVR SPI port*/
@@ -53,6 +54,28 @@ typedef struct spi_init {
 	uint8_t double_speed;				/**< AVR SPI port*/
 } spi_init_t;
 
+// NEW
+/**
+ * The bitfield representing SPI control, status and data registers.
+ */
+typedef struct spi_reg {
+	// SPCR0 : SPI Control Register
+	uint8_t clock_rate				:	2;		/**< Clock rate selection. */
+	uint8_t clock_phase				:	1;		/**< Sampling trailing edge when set (1), and leading edge when cleared (0). */
+	uint8_t clock_polarity			:	1;		/**< When set (1) the SCK is logic HIGH when idle. */
+	uint8_t spi_master				:	1;		/**< Set (1) to be master, clear (0) to be slave. */
+	uint8_t data_order				:	1;		/**< If set (1) the MSB is sent first otherwise LSB. */
+	uint8_t enable					:	1;		/**< Set (1) to enable SPI. */
+	uint8_t interrupt_enable		:	1;		/**< Enables the SPI interrupt. */
+	// SPSR0 : SPI Status Register
+	uint8_t double_speed			:	1;		/**< When set (1) the SCK frequency is doubled. */	
+	uint8_t reserved				:	5;		/**< Not used. */
+	uint8_t write_collision_flag	:	1;		/**< (Read only) */
+	uint8_t interrupt_flag			:	1;		/**< (Read only) Is set when the serial transfer is complete. */
+	// SPDR0 : SPI Data Register
+	uint8_t data					:	8;
+} spi_reg_t;
+
 // Init example
 // spi_init_t spi_settings = {.data_order = SPI_DORD_MSB, .spi_master = TRUE, .clock_polarity = 0, .clock_phase = 0, .clock_rate = SPI_FCPU_DIV_4, .double_speed = FALSE};
 
@@ -60,11 +83,10 @@ typedef struct spi_init {
 /**
 * Initialize the Serial Peripheral Interface.
 *
-* @param spi_settings	A struct containing the spi configuration data.
+* @param spi_settings	A struct containing the SPI configuration data.
 */
-void spi_init(spi_init_t *spi_settings);
-
-
+// OLD CRAP: void spi_init(spi_init_t *spi_settings);
+void spi_init(void);
 
 
 /**
@@ -75,9 +97,6 @@ void spi_init(spi_init_t *spi_settings);
 */
 uint8_t spi_txrx(uint8_t data);
 
-
-
-
 /**
 * Sending and receiving 16 bits as one package.
 *
@@ -86,21 +105,14 @@ uint8_t spi_txrx(uint8_t data);
 */
 uint16_t spi_txrx_16bit(uint16_t data);
 
-
-
-
 /**
 * Set CS pin to high.
 */
 void spi_set_cs(void);
 
-
-
-
 /**
 * Set CS pin to low.
 */
 void spi_clear_cs(void);
-
 
 #endif /* SPI_H_ */
