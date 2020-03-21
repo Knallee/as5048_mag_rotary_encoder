@@ -7,7 +7,7 @@
 
 #include "spi.h"
 
-volatile spi_reg_t *spi = (volatile spi_reg_t *) SPCR0;	// else SPCR0_OFFSET
+// volatile spi_reg_t *spi = (volatile spi_reg_t *) SPCR0_OFFSET;
 
 /*
 void spi_init(spi_init_t *spi_settings) 
@@ -52,13 +52,13 @@ void spi_init(spi_init_t *spi_settings)
 
 void spi_init(){
 	SPI_DDR	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
-	spi.enable			= TRUE;
-	spi.spi_master		= TRUE;		/** AVR is the master. */
-	spi.data_order		= SPI_DORD_MSB;
-	spi.clock_polarity	= HIGH;
-	spi.clock_phase		= 1;
-	spi.clock_rate		= SPI_FCPU_DIV_16;
-	spi.double_speed	= FALSE;
+	SPI.enable			= TRUE;
+	SPI.spi_master		= TRUE;		/** AVR is the master. */
+	SPI.data_order		= SPI_DORD_MSB;
+	SPI.clock_polarity	= HIGH;
+	SPI.clock_phase		= 1;
+	SPI.clock_rate		= SPI_FCPU_DIV_16;
+	SPI.double_speed	= FALSE;
 }
 
 
@@ -69,9 +69,9 @@ uint8_t spi_txrx_byte(uint8_t data)
 	while (!(SPSR & (1 << SPIF)));
 	return SPDR;
 	*/
-	spi.data = data;
-	while (spi.interrupt_flag == 0);
-	return spi.data;
+	SPI.data = data;
+	while (SPI.interrupt_flag == 0);
+	return SPI.data;
 }
 
 uint16_t spi_txrx_16bit(uint16_t data)

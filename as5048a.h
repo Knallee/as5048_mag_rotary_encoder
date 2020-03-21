@@ -63,8 +63,35 @@
 /* Constants */
 #define	 BIT14_VALUE		16384			/**< 2^14 */
 
-// One time programming function, used only once
-// void as5048_otp();	
+
+typedef struct {
+	uint16_t address	: 14;
+	uint8_t read_write	: 1;
+	uint8_t parity		: 1;
+} send_package_t;
+
+typedef struct {
+	uint16_t data		: 14;
+	uint8_t error_flag	: 1;
+	uint8_t parity		: 1;
+} data_package_t;
+
+typedef struct {
+	uint8_t agc						: 8;
+	uint8_t cordic_of				: 1;
+	uint8_t offset_comp_finished	: 1;
+	uint8_t comp_low				: 1;
+	uint8_t comp_high				: 1;
+	uint8_t not_used				: 2;
+} agc_reg_t;
+
+typedef struct {
+	uint8_t framing_error	: 1;
+	uint8_t command_invalid	: 1;
+	uint8_t parity_error	: 1;
+	uint8_t not_used		: 11;
+} clear_error_reg_t;
+
 
 /**
 * Receiving Angle.

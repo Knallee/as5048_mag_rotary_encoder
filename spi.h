@@ -10,6 +10,7 @@
 #define SPI_H_
 
 #include "fcpu.h"
+#include "atmega1284.h"
 
 #include <avr/io.h>
 #include <util/delay.h>
@@ -39,9 +40,9 @@
 
 #define SPI_CS_DELAY			1		/**< The delay, in us, between consequent read or writes */ 
 
-#define SPCR0_OFFSET	0x0000004C	// USELESS?
-
 #define DUMMY_BYTE	0x00
+
+#define SPI (*(spi_reg_t *) SPCR0_OFFSET)
 
 
 // OLD CRAP

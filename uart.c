@@ -8,8 +8,8 @@
  #include "uart.h"
  
 
-extern volatile usart0_t *usart0;
-extern volatile usart1_t *usart1;
+extern volatile usart0_t *usart0;		// onödig?
+extern volatile usart1_t *usart1;		// onödig?
 
 void usart0_tx_data(uint8_t data)
 {

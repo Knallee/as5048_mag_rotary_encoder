@@ -1,0 +1,128 @@
+/*
+ * atmega1284.h
+ *
+ * Created: 2020-03-21 06:54:35
+ *  Author: Georgij
+ */ 
+
+
+#ifndef ATMEGA1284_H_
+#define ATMEGA1284_H_
+
+#define PINA_OFFSET		0x20
+#define DDRA_OFFSET		0x21
+#define PORTA_OFFSET	0x22
+#define PINB_OFFSET		0x23
+#define DDRB_OFFSET		0x24
+#define PORTB_OFFSET	0x25
+#define PINC_OFFSET		0x26
+#define DDRC_OFFSET		0x27
+#define PORTC_OFFSET	0x28
+#define PIND_OFFSET		0x29
+#define DDRD_OFFSET		0x2A
+#define PORTD_OFFSET	0x2B
+
+#define TIFR0_OFFSET	0x35
+#define TIFR1_OFFSET	0x36
+#define TIFR2_OFFSET	0x37
+#define TIFR3_OFFSET	0x38
+
+#define PCIFR_OFFSET	0x3B
+#define EIFR_OFFSET		0x3C
+#define EIMSK_OFFSET	0x3D
+#define GPIOR0_OFFSET	0x3E
+#define EECR_OFFSET		0x3F
+#define EEDR_OFFSET		0x40
+#define EEAR_OFFSET		0x41
+#define GTCCR_OFFSET	0x43
+#define TCCR0A_OFFSET	0x44
+#define TCCR0B_OFFSET	0x45
+#define TCNT0_OFFSET	0x46
+#define OCR0A_OFFSET	0x47
+#define OCR0B_OFFSET	0x48
+
+#define GPIOR1_OFFSET	0x4A
+#define GPIOR2_OFFSET	0x4B
+#define SPCR0_OFFSET	0x4C
+#define SPSR0_OFFSET	0x4D
+#define SPDR0_OFFSET	0x4E
+
+#define SMCR_OFFSET		0x53
+#define MCUSR_OFFSET	0x54
+#define MCUCR_OFFSET	0x55
+#define SPMCSR_OFFSET	0x57
+#define RAMPZ_OFFSET	0x5B
+
+#define SPL_OFFSET		0x5D
+#define SREG_OFFSET		0x5F
+#define WDTCSR_OFFSET	0x60
+#define CLKPR_OFFSET	0x61
+
+#define PRR0_OFFSET		0x64
+#define PRR1_OFFSET		0x65
+#define OSCCAL_OFFSET	0x66
+#define PCICR_OFFSET	0x68
+#define EICRA_OFFSET	0x69
+
+#define PCMSK0_OFFSET	0x6B
+#define PCMSK1_OFFSET	0x6C
+#define PCMSK2_OFFSET	0x6D
+#define TIMSK0_OFFSET	0x6E
+#define TIMSK1_OFFSET	0x6F
+#define TIMSK2_OFFSET	0x70
+#define TIMSK3_OFFSET	0x71
+#define PCMSK3_OFFSET	0x73
+
+#define ADC_OFFSET		0x78
+#define ADCSRA_OFFSET	0x7A
+#define ADCSRB_OFFSET	0x7B
+#define ADMUX_OFFSET	0x7C
+
+#define DIDR0_OFFSET	0x7E
+#define DIDR1_OFFSET	0x7F
+
+#define TCCR1A_OFFSET	0x80   
+#define TCCR1B_OFFSET	0x81   
+#define TCCR1C_OFFSET	0x82   
+
+#define TCNT1_OFFSET	0x84
+#define ICR1_OFFSET		0x86
+#define OCR1_OFFSET		0x88
+#define OCR1B_OFFSET	0x8A
+
+#define TCCR3A_OFFSET	0x90
+#define TCCR3B_OFFSET	0x91
+#define TCCR3C_OFFSET	0x92
+
+#define TCNT3_OFFSET	0x94
+#define ICR3_OFFSET		0x96
+#define OCR3A_OFFSET	0x98
+#define OCR3B_OFFSET	0x9A
+
+#define TCCR2A_OFFSET	0xB0
+#define TCCR2B_OFFSET	0xB1
+#define TCNT2_OFFSET	0xB2
+#define OCR2A_OFFSET	0xB3
+#define OCR2B_OFFSET	0xB4
+	
+#define ASSR_OFFSET		0xB6
+#define TWBR_OFFSET		0xB8
+#define TWSR_OFFSET		0xB9
+#define TWAR_OFFSET		0xBA
+#define TWDR_OFFSET		0xBB
+#define TWCR_OFFSET		0xBC
+#define TWAMR_OFFSET	0xBD
+
+#define UCSR0A_OFFSET 0xC0
+#define UCSR0B_OFFSET 0xC1
+#define UCSR0C_OFFSET 0xC2
+#define UBRR0_OFFSET 0xC4
+#define UDR0_OFFSET 0xC6
+
+#define UCSR1A_OFFSET 0xC8
+#define UCSR1B_OFFSET 0xC9
+#define UCSR1C_OFFSET 0xCA
+#define UBRR1_OFFSET 0xCC
+#define UDR1_OFFSET 0xCE
+
+#endif /* ATMEGA1284_H_ */

@@ -13,20 +13,15 @@
 #include "uart.h"
 #include "spi.h"
 #include "as5048a.h"
+#include "atmega1284.h"
 
 
 #define SPI_TEST		1
 #define ENCODER_TEST	2
 #define UART_TEST		3
 
-#define MODE	
-
-// ATmega1284 Register Offsets
-#define UCSR0A_OFFSET	0x000000C0
-#define UCSR1A_OFFSET	0x000000C8
-
-volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET; // just UCSR0A?
-volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET; // just UCSR1A?
+volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET;
+volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET;
 volatile uint8_t rx_data;
 
 /*
