@@ -63,13 +63,7 @@ uint16_t angle_decode(uint16_t data) {
 
 uint16_t send_and_receive(uint16_t transmit_data) {
 	uint16_t received_data;
-	spi_clear_cs();
 	received_data = spi_txrx_16bit(transmit_data);				/* Request data */
-	spi_set_cs();
-	_delay_us(1);												/* Minimum 350 ns CS delay */
-	spi_clear_cs();
 	received_data = spi_txrx_16bit(REG_NOP);					/* Receives requested data from the last transmission */
-	spi_set_cs();	
-	// TODO: Error checking 
 	return received_data;
 }

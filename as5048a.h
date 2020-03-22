@@ -10,10 +10,7 @@
 #define AS5048A_H_
 
 #include <stdlib.h>
-#include <avr/io.h>
-
 #include "spi.h"
-#include "uart.h"
 
 /* Control and Error Registers */
 #define REG_NOP			0x0000		/**< Dummy register. */

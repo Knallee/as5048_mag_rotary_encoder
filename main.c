@@ -19,23 +19,13 @@
 #define SPI_TEST		1
 #define ENCODER_TEST	2
 #define UART_TEST		3
+
 #define MODE			SPI_TEST
 
 volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET;
 volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET;
 
 volatile uint8_t rx_data;
-
-/*
-spi_init_t spi_settings = { 
-	.data_order		= SPI_DORD_MSB,						
-	.spi_master		= TRUE,
-	.clock_polarity = 1,
-	.clock_phase	= 0,
-	.clock_rate		= SPI_FCPU_DIV_16,
-	.double_speed	= FALSE
-};						
-*/
 
 void uart_init(void);
 
@@ -45,34 +35,19 @@ uint16_t deg;
 uint8_t agc;
 
 int main(void)
-{
-	_delay_ms(100);				/* Booting Windows */
-	spi_set_cs();	/* wot for? */
-	// spi_init(&spi_settings);
+{	
 	spi_init();
-	uart_init();
+	uart_init();	
 	
 	//sei();
-
-
     
 	//as5048_clear_error();	
-	
-
 		
 #if MODE == SPI_TEST
 
 	while (1) {
-
-		SPI_PORT &= ~(1 << SPI_CS_PIN);
 		spi_txrx_byte(0b11001100);
-		SPI_PORT |= (1 << SPI_CS_PIN);
-		_delay_us(5);
-		SPI_PORT &= ~(1 << SPI_CS_PIN);
-  		spi_txrx_16bit(0b0000111101010101);
-		SPI_PORT |= (1 << SPI_CS_PIN);
-		_delay_ms(5);
-		  
+  		spi_txrx_16bit(0b0000111101010101);		  
 	}
 		  
 #elif MODE == ENCODER_TEST
@@ -128,22 +103,22 @@ void data_integrity(uint16_t data) {
 	uint16_t checker = com_error_check(data);
 	if ((checker & (1 << ERROR_FLAG)) == (1 << ERROR_FLAG)) {
 		usart1_tx_string("COM error lul!");
-		usart1_tx_char("\n");
-		if((checker & (1 << PARITY_ERROR_MISO) != 0)) {
+		usart1_tx_char('\n');
+		if((checker & (1 << PARITY_ERROR_MISO)) != 0) {
 			usart1_tx_string("Parity error MISO.");
-			usart1_tx_char("\n");
+			usart1_tx_char('\n');
 		}
-		if((checker & (1 << PARITY_ERROR_MOSI) != 0)) {
+		if((checker & (1 << PARITY_ERROR_MOSI)) != 0) {
 			usart1_tx_string("Parity error MOSI.");
-			usart1_tx_char("\n");
+			usart1_tx_char('\n');
 		}
-		if((checker & (1 << COMMAND_INVALID) != 0)) {
+		if((checker & (1 << COMMAND_INVALID)) != 0) {
 			usart1_tx_string("Command Invalid.");
-			usart1_tx_char("\n");
+			usart1_tx_char('\n');
 		}
-		if((checker & (1 << FRAMING_ERROR) != 0)) {
+		if((checker & (1 << FRAMING_ERROR)) != 0) {
 			usart1_tx_string("Framing error.");
-			usart1_tx_char("\n");
+			usart1_tx_char('\n');
 		}
 	}
 }
