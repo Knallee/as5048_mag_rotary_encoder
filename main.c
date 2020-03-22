@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
 #include "uart.h"
 #include "spi.h"
 #include "as5048a.h"
@@ -17,12 +18,15 @@
 
 
 #define SPI_TEST		1
-#define ENCODER_TEST	2
-#define UART_TEST		3
+#define UART_TEXT_TEST	2
+#define ENCODER_TEST	3
+#define UART_TEST		4
+#define UART_YAT_TEST   5
 
-#define MODE			SPI_TEST
+#define MODE			UART_TEXT_TEST
 
 volatile uint8_t rx_data;
+void data_integrity(uint16_t data);
 
 uint16_t val;
 uint16_t agc_data, angle_data, error_data;
@@ -44,8 +48,22 @@ int main(void)
 		spi_txrx_byte(0b11001100);
   		spi_txrx_16bit(0b0000111101010101);		  
 	}
-		  
-#elif MODE == ENCODER_TEST
+	  
+#elif MODE == UART_TEXT_TEST
+	uint16_t tick = 0;
+	char buf[256];
+	deg = 99;
+	agc = 44;
+	
+	while (1) {
+		snprintf(buf, sizeof buf, "%d%s%d%s%d%s", tick, ". Deg: ", deg , ", AGC:" , agc, "        ");
+		usart1_tx_string(buf);
+		_delay_ms(1000);
+		tick++;
+	}
+	
+	
+#elif MODE == ENCODER_TEST	
 	while (1) {
 		agc_data = as5048_read_agc();
 		data_integrity(agc_data);				/* Check for error flag */
@@ -54,10 +72,8 @@ int main(void)
 		
 		deg = angle_decode(angle_data);
 		agc = (uint8_t) agc_data;
-		usart1_tx_data(angle_data/2);	// 1 circle = 180 deg, deal with it!
-		usart1_tx_char('\n');
+		usart1_tx_data(deg/2);	// 1 circle = 180 deg, deal with it!
 		usart1_tx_data(agc);
-		usart1_tx_char('\n');
 		
 		
 		//if (( agc_data & ((1<< CORDIC_OF_BIT)|(1<< COMP_HIGH_BIT)|(1<< COMP_LOW_BIT)) ) == 0) {			/**< Check diagnostics bits for magnetic compensation and CORDIC overflow which tells if data is valid. */
@@ -72,6 +88,13 @@ int main(void)
 		usart1_send_uint16_as_ascii_string(val);
 		val += 500;
 		_delay_ms(1);
+	}
+	
+#elif MODE == UART_YAT_TEST
+
+	while (1) {
+		usart1_tx_string("Din mamma!");
+		_delay_ms(1000);
 	}
 	
 #endif

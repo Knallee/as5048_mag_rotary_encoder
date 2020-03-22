@@ -11,11 +11,13 @@ volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET;
 volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET;
 
 void usart1_init() {
+	usart1_set_baudrate();
 	usart1->tx_enable				= TRUE;
 	usart1->rx_enable				= TRUE;
-	usart1->rx_complete_int_enable	= TRUE;
-	usart1->multi_processor_mode	= TRUE;
-	usart1_set_baudrate();
+	usart1->rx_complete_int_enable	= FALSE; //TRUE;
+	usart1->multi_processor_mode	= FALSE; //TRUE;
+	usart1->nbr_stop_bits = USART_STOP_BITS_2;	// 0
+	usart1->nbr_data_bits_c = USART_8_BITS_C;	// 0
 }
 
 void usart1_set_baudrate()
@@ -26,14 +28,12 @@ void usart1_set_baudrate()
 void usart0_tx_data(uint8_t data)
 {	
 	while (usart0->data_register_empty_flag == 0);	// Wait for empty transmit buffer		
-	// while (!( UCSR0A & (1<<UDRE0)));	
 	UDR0 = data;							// Put data into buffer, sends the data				
 }
 
 void usart0_tx_char(char ch)
 {	
 	while (usart0->data_register_empty_flag == 0);	// Wait for empty transmit buffer
-	// while (!( UCSR0A & (1<<UDRE0)));
 	UDR0 = ch;							// Put data into buffer, sends the data
 }
 
@@ -50,14 +50,12 @@ void usart0_set_baudrate(int baud)
 void usart1_tx_data(uint8_t data)
 {
 	while (usart1->data_register_empty_flag == 0);	// Wait for empty transmit buffer	
-	// while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
 	UDR1 = data;						// Put data into buffer, sends the data
 }
 
 void usart1_tx_char(char ch)
 {
-	while (usart1->data_register_empty_flag == 0);	// Wait for empty transmit buffer	
-	// while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
+	while (usart1->data_register_empty_flag == 0);	// Wait for empty transmit buffer
 	UDR1 = ch;							// Put data into buffer, sends the data
 }
 

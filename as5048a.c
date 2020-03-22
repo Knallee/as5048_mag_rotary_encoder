@@ -7,12 +7,14 @@
 
 #include "as5048a.h"
 
-uint16_t as5048_read_angle() {
+uint16_t as5048_read_angle()
+{
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_ANGLE;								/**< Read bit + Register. */
 	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);			/**< Send Parity bit + Register and return output */
 }
 
-uint16_t as5048_read_magnitude() {
+uint16_t as5048_read_magnitude()
+{
 	uint16_t data = (READ << RW_BIT_POSITION) | REG_MAGNITUDE;						/**< Read bit + Register. */
 	return send_and_receive((calc_parity(data) << PARITY_BIT_POSITION) | data);		/**< Send Parity bit + Register and return output. */
 }
@@ -48,7 +50,6 @@ uint16_t com_error_check(uint16_t data)
 uint8_t calc_parity(uint16_t data)
 {
 	uint8_t count = 0;
-	
 	for (uint8_t i = 0; i < 16; i++) {
 		if (data & 0x1)
 			count++;
@@ -57,11 +58,13 @@ uint8_t calc_parity(uint16_t data)
 	return count & 0x1;
 }
 
-uint16_t angle_decode(uint16_t data) {
+uint16_t angle_decode(uint16_t data)
+{
 	return (data * (360/ BIT14_VALUE) );
 }
 
-uint16_t send_and_receive(uint16_t transmit_data) {
+uint16_t send_and_receive(uint16_t transmit_data)
+{
 	uint16_t received_data;
 	received_data = spi_txrx_16bit(transmit_data);				/* Request data */
 	received_data = spi_txrx_16bit(REG_NOP);					/* Receives requested data from the last transmission */
