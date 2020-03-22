@@ -54,7 +54,7 @@ void spi_init(){
 	SPI_DDR	|= (1 << SPI_MOSI_PIN) | (1 << SPI_SCK_PIN) | (1 << SPI_CS_PIN);
 	SPI.enable			= TRUE;
 	SPI.spi_master		= TRUE;		/** AVR is the master. */
-	SPI.data_order		= SPI_DORD_MSB;
+	SPI.data_order		= SPI_MSB_FIRST;
 	SPI.clock_polarity	= HIGH;
 	SPI.clock_phase		= 1;
 	SPI.clock_rate		= SPI_FCPU_DIV_16;

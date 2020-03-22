@@ -89,7 +89,7 @@ typedef struct {
 	uint8_t framing_error	: 1;
 	uint8_t command_invalid	: 1;
 	uint8_t parity_error	: 1;
-	uint8_t not_used		: 11;
+	uint16_t not_used		: 11;
 } clear_error_reg_t;
 
 

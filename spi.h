@@ -28,7 +28,8 @@
 #define SPI_SCK_PIN			PORTB7		/**< AVR MOSI pin*/
 
 #define SPI_MASTER				TRUE	/**< If true the AVR becomes the master*/
-#define SPI_DORD_MSB			TRUE	/**< If true the MSB is sent first otherwise LSB*/	
+#define SPI_MSB_FIRST			1		/**< MSB is sent first otherwise LSB*/
+#define SPI_LSB_FIRST			1		/**< LSB is sent first otherwise LSB*/
 #define SPI_CLOCK_POLARITY		0		/**< When 0 SCK is high in idle, when 1 low*/
 #define SPI_CLOCK_PHASE			0		/**< Determines which flank the data is sampled on*/
 #define SPI_DOUBLE_RATE			FALSE	/**< When set to true the spi data rate is doubled*/
