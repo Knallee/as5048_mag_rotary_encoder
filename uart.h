@@ -11,6 +11,7 @@
 
 #include "fcpu.h"
 #include <avr/io.h>
+#include "atmega1284.h"
 //#include <util/setbaud.h>
 
 #define TRUE	1
@@ -57,6 +58,7 @@
  * A bitfield representing usart0 control and status registers.
  */
 typedef struct usart0_regs {
+	// UCSR0A : USART Control and Status Register A
 	volatile uint8_t multi_processor_mode 		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t double_speed				: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t parity_error_flag			: 1;	/**< Read only. */
@@ -65,7 +67,7 @@ typedef struct usart0_regs {
 	volatile uint8_t data_register_empty_flag	: 1;	/**< Read only. */
 	volatile uint8_t tx_complete_flag			: 1;	/**< Read only. */
 	volatile uint8_t rx_complete_flag			: 1;	/**< Read only. */
-														
+	// UCSROB : USART Control and Status Register B 													
 	volatile uint8_t tx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t rx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t data_bits_9_b				: 1;	/**< Set this to TRUE (1) for nine data bits. nbr_data_bits_c needs to be set to USART_8_BITS_C. */
@@ -74,7 +76,7 @@ typedef struct usart0_regs {
 	volatile uint8_t dreg_empty_int_enable		: 1;	/**< USART data register empty interrupt. Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default.*/
 	volatile uint8_t tx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t rx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
-														
+	// UCSR0C : USART Control and Status Register C												
 	volatile uint8_t clock_polarity				: 1;	/**< Rising or falling edge. Use the USART_CLOCK_POL macros. Transmit data is changed on rising edge and rx data sampled on falling by default. */
 	volatile uint8_t nbr_data_bits_c			: 2;	/**< The number of data bits to form a packet, see USART_X_BITS macros. For nine bits see data_bits_9_b. Eight bits is default. */
 	volatile uint8_t nbr_stop_bits				: 1;	/**< One or two stop bits. Use USART_STOP_BITS macro. One by default. */
@@ -87,6 +89,7 @@ typedef struct usart0_regs {
  * A bitfield representing usart1 control and status registers.
  */
 typedef struct usart1_regs{
+	// UCSR1A : USART Control and Status Register A
 	volatile uint8_t multi_processor_mode 		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t double_speed				: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t parity_error_flag			: 1;	/**< Read only. */
@@ -95,7 +98,7 @@ typedef struct usart1_regs{
 	volatile uint8_t data_register_empty_flag	: 1;	/**< Read only. */
 	volatile uint8_t tx_complete_flag			: 1;	/**< Read only. */
 	volatile uint8_t rx_complete_flag			: 1;	/**< Read only. */
-	
+	// UCSR1B : USART Control and Status Register B
 	volatile uint8_t tx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t rx_bit_8					: 1;	/**< The ninth TX bit of the data packet. */
 	volatile uint8_t data_bits_9_b				: 1;	/**< Set this to TRUE (1) for nine data bits. nbr_data_bits_c needs to be set to USART_8_BITS_C. */
@@ -104,13 +107,24 @@ typedef struct usart1_regs{
 	volatile uint8_t dreg_empty_int_enable		: 1;	/**< USART data register empty interrupt. Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default.*/
 	volatile uint8_t tx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
 	volatile uint8_t rx_complete_int_enable		: 1;	/**< Set to TRUE (1) to enable, FALSE (0) to disable. Disabled by default. */
-	
+	// UCSR1C : USART Control and Status Register C
 	volatile uint8_t clock_polarity				: 1;	/**< Rising or falling edge. Use the USART_CLOCK_POL macros. Transmit data is changed on rising edge and rx data sampled on falling by default. */
 	volatile uint8_t nbr_data_bits_c			: 2;	/**< The number of data bits to form a packet, see USART_X_BITS macros. For nine bits see data_bits_9_b. Eight bits is default. */
 	volatile uint8_t nbr_stop_bits				: 1;	/**< One or two stop bits. Use USART_STOP_BITS macro. One by default. */
 	volatile uint8_t parity_mode				: 2;	/**< Even or odd parity. Use USART_PARITY macros. Disabled by default. */
 	volatile uint8_t usart_mode					: 2;	/**< Asynchronous, synchronous or master SPI. Use USART_MODE macros. Asynchronous by default.*/
 } usart1_t;
+
+
+/**
+* Initialize the USART1 Interface.
+*/
+void usart1_init();
+
+/**
+* Function that sets the USART baud rate for usart1. Specify the desired baud rate using the macro BAUD_RATE_1.
+*/
+void usart1_set_baudrate();
 
 /**
 * Sends a uint8_t.
@@ -158,11 +172,6 @@ void usart1_tx_char(char ch);
 * @param val		This is the string that will be sent.
 */
 void usart1_tx_string(char *string);
-
-/**
-* Function that sets the usart baud rate for usart1. Specify the desired baud rate using the macro BAUD_RATE_1.
-*/
-void usart1_set_baudrate();
 
 
 /**

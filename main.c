@@ -22,12 +22,7 @@
 
 #define MODE			SPI_TEST
 
-volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET;
-volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET;
-
 volatile uint8_t rx_data;
-
-void uart_init(void);
 
 uint16_t val;
 uint16_t agc_data, angle_data, error_data;
@@ -37,7 +32,7 @@ uint8_t agc;
 int main(void)
 {	
 	spi_init();
-	uart_init();	
+	usart1_init();	
 	
 	//sei();
     
@@ -84,13 +79,7 @@ int main(void)
 }
 
 
-void uart_init() {
-	usart1->tx_enable				= TRUE;
-	usart1->rx_enable				= TRUE;
-	usart1->rx_complete_int_enable	= TRUE;
-	usart1->multi_processor_mode	= TRUE;
-	usart1_set_baudrate();
-}
+
 
 
 ISR(USART1_RX_vect) {

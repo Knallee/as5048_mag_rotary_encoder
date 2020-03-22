@@ -5,21 +5,35 @@
  *  Author: 2AM PULLUPS
  */
 
- #include "uart.h"
+#include "uart.h"
  
+volatile usart0_t *usart0 = (volatile usart0_t *) UCSR0A_OFFSET;
+volatile usart1_t *usart1 = (volatile usart1_t *) UCSR1A_OFFSET;
 
-extern volatile usart0_t *usart0;		// onödig?
-extern volatile usart1_t *usart1;		// onödig?
+void usart1_init() {
+	usart1->tx_enable				= TRUE;
+	usart1->rx_enable				= TRUE;
+	usart1->rx_complete_int_enable	= TRUE;
+	usart1->multi_processor_mode	= TRUE;
+	usart1_set_baudrate();
+}
+
+void usart1_set_baudrate()
+{
+	UBRR1 = UBBR1_VAL;
+}
 
 void usart0_tx_data(uint8_t data)
-{
-	while (!( UCSR0A & (1<<UDRE0)));	// Wait for empty transmit buffer
-	UDR0 = data;						// Put data into buffer, sends the data
+{	
+	while (usart0->data_register_empty_flag == 0);	// Wait for empty transmit buffer		
+	// while (!( UCSR0A & (1<<UDRE0)));	
+	UDR0 = data;							// Put data into buffer, sends the data				
 }
 
 void usart0_tx_char(char ch)
-{
-	while (!( UCSR0A & (1<<UDRE0)));	// Wait for empty transmit buffer
+{	
+	while (usart0->data_register_empty_flag == 0);	// Wait for empty transmit buffer
+	// while (!( UCSR0A & (1<<UDRE0)));
 	UDR0 = ch;							// Put data into buffer, sends the data
 }
 
@@ -35,24 +49,21 @@ void usart0_set_baudrate(int baud)
 
 void usart1_tx_data(uint8_t data)
 {
-	while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
+	while (usart1->data_register_empty_flag == 0);	// Wait for empty transmit buffer	
+	// while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
 	UDR1 = data;						// Put data into buffer, sends the data
 }
 
 void usart1_tx_char(char ch)
 {
-	while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
+	while (usart1->data_register_empty_flag == 0);	// Wait for empty transmit buffer	
+	// while (!( UCSR1A & (1<<UDRE1)));	// Wait for empty transmit buffer
 	UDR1 = ch;							// Put data into buffer, sends the data
 }
 
 void usart1_tx_string(char *string)
 {
 	while(*string != 0x00) usart1_tx_char(*string++);
-}
-
-void usart1_set_baudrate()
-{
-	UBRR1 = UBBR1_VAL;
 }
 
 void usart1_send_uint8_as_ascii_string(uint8_t val)
