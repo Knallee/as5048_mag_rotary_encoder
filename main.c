@@ -23,7 +23,7 @@
 #define UART_TEST		4
 #define UART_YAT_TEST   5
 
-#define MODE			UART_TEXT_TEST
+#define MODE			ENCODER_TEST
 
 volatile uint8_t rx_data;
 void data_integrity(uint16_t data);
@@ -37,6 +37,8 @@ int main(void)
 {	
 	spi_init();
 	usart1_init();	
+	
+	_delay_ms(500);
 	
 	//sei();
     
@@ -63,17 +65,22 @@ int main(void)
 	}
 	
 	
-#elif MODE == ENCODER_TEST	
+#elif MODE == ENCODER_TEST
+	uint16_t tick = 0;
+	char buf[256];
+	
 	while (1) {
 		agc_data = as5048_read_agc();
 		data_integrity(agc_data);				/* Check for error flag */
 		angle_data = as5048_read_angle();
 		data_integrity(angle_data);				/* Check for error flag */
 		
-		deg = angle_decode(angle_data);
+		deg = angle_decode(angle_data & (16384 - 31 - 1));
 		agc = (uint8_t) agc_data;
-		usart1_tx_data(deg/2);	// 1 circle = 180 deg, deal with it!
-		usart1_tx_data(agc);
+		snprintf(buf, sizeof buf, "%d%s%d%s%d%c", tick, ". Deg: ", deg , ", AGC:" , agc, '\n');
+		usart1_tx_string(buf);
+		_delay_ms(1000);
+		tick++;
 		
 		
 		//if (( agc_data & ((1<< CORDIC_OF_BIT)|(1<< COMP_HIGH_BIT)|(1<< COMP_LOW_BIT)) ) == 0) {			/**< Check diagnostics bits for magnetic compensation and CORDIC overflow which tells if data is valid. */
@@ -114,8 +121,7 @@ ISR(USART1_RX_vect) {
 void data_integrity(uint16_t data) {
 	uint16_t checker = com_error_check(data);
 	if ((checker & (1 << ERROR_FLAG)) == (1 << ERROR_FLAG)) {
-		usart1_tx_string("COM error lul!");
-		usart1_tx_char('\n');
+		//usart1_tx_string("COM error!");
 		if((checker & (1 << PARITY_ERROR_MISO)) != 0) {
 			usart1_tx_string("Parity error MISO.");
 			usart1_tx_char('\n');

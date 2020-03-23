@@ -60,7 +60,7 @@ uint8_t calc_parity(uint16_t data)
 
 uint16_t angle_decode(uint16_t data)
 {
-	return (data * (360/ BIT14_VALUE) );
+	return (uint16_t) ( (((float) data) / BIT14_VALUE) * 360 );
 }
 
 uint16_t send_and_receive(uint16_t transmit_data)

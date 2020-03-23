@@ -19,7 +19,7 @@ void spi_init()
 	spi->spi_master		= TRUE;
 	spi->data_order		= SPI_MSB_FIRST;
 	spi->clock_polarity	= LOW;
-	spi->clock_phase	= 0;
+	spi->clock_phase	= 1;
 	spi->clock_rate		= SPI_FCPU_DIV_16;
 	spi->double_speed	= FALSE;
 }
